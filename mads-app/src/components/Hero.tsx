@@ -1,0 +1,248 @@
+import React, { useState, useEffect, useRef } from 'react';
+import { Play, ArrowDown, Sparkles } from 'lucide-react';
+
+interface HeroProps {
+  onEnrollClick: () => void;
+  onOpenVideo?: () => void;
+}
+
+export const Hero: React.FC<HeroProps> = ({ onEnrollClick }) => {
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
+  const heroRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      if (!heroRef.current) return;
+      const { clientX, clientY } = e;
+      const { innerWidth, innerHeight } = window;
+      // Normalize from -1 to 1
+      const x = (clientX / innerWidth - 0.5) * 2;
+      const y = (clientY / innerHeight - 0.5) * 2;
+      setMousePos({ x, y });
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
+  return (
+    <section
+      id="hero"
+      ref={heroRef}
+      className="relative min-h-screen w-full bg-[#F6F6F5] text-[#121214] flex flex-col justify-between pt-28 sm:pt-36 pb-12 px-6 sm:px-10 overflow-hidden select-none"
+    >
+      {/* Subtle architectural grid lines */}
+      <div className="absolute inset-0 pointer-events-none opacity-[0.03] bg-[radial-gradient(#121214_1px,transparent_1px)] [background-size:24px_24px]"></div>
+
+      {/* Top Meta Chips */}
+      <div className="max-w-7xl mx-auto w-full flex flex-wrap items-center justify-between gap-4 z-10">
+        <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-xs sm:text-sm font-medium">
+          <span className="px-3.5 py-1.5 rounded-full bg-[#E8E8E6] text-[#27272A] flex items-center gap-1.5 tracking-wide">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#1DBF98] animate-pulse"></span>
+            когда <strong className="font-semibold text-black">24 ноября</strong>
+          </span>
+          <span className="px-3.5 py-1.5 rounded-full bg-[#E8E8E6] text-[#27272A] tracking-wide">
+            формат <strong className="font-semibold text-black">теория и практика</strong>
+          </span>
+          <span className="px-3.5 py-1.5 rounded-full bg-[#E8E8E6] text-[#27272A] tracking-wide">
+            как <strong className="font-semibold text-black">онлайн</strong>
+          </span>
+        </div>
+
+        <button
+          onClick={() => setIsVideoModalOpen(true)}
+          className="group inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#52525B] hover:text-black transition-colors"
+        >
+          <div className="w-7 h-7 rounded-full bg-[#E8E8E6] group-hover:bg-[#121214] group-hover:text-white transition-all duration-300 flex items-center justify-center">
+            <Play className="w-3 h-3 fill-current ml-0.5" />
+          </div>
+          <span>ТИЗЕР КУРСА (1:20)</span>
+        </button>
+      </div>
+
+      {/* Main Hero Centerpiece: Giant word + Overlapping 3D Megaphone */}
+      <div className="relative max-w-7xl mx-auto w-full my-auto py-10 sm:py-16 flex flex-col items-end justify-center">
+        {/* Giant word 'маркетинг' sitting slightly to the right */}
+        <div className="relative w-full text-right pr-2 sm:pr-8 md:pr-12">
+          <h1
+            id="slovo-marketing"
+            className="font-unbounded font-black tracking-[-0.07em] text-[#121214] leading-[0.82] text-[18vw] sm:text-[16vw] md:text-[14.5vw] lg:text-[13.5vw] lowercase select-none transition-transform duration-500 will-change-transform"
+          >
+            маркетинг
+          </h1>
+
+          {/* Over the word: Photoreal 3D Megaphone Object overlapping the text */}
+          <div
+            id="rupor"
+            style={{
+              transform: `translate3d(${mousePos.x * 24}px, ${mousePos.y * 20}px, 0px) rotate(${mousePos.x * 4}deg)`,
+              transition: 'transform 0.2s cubic-bezier(0.16, 1, 0.3, 1)',
+            }}
+            className="absolute -top-12 sm:-top-20 md:-top-28 right-[2%] sm:right-[5%] md:right-[10%] w-[38vw] max-w-[460px] min-w-[200px] aspect-square pointer-events-none z-20 will-change-transform filter drop-shadow-[0_25px_35px_rgba(0,0,0,0.18)]"
+          >
+            {/* SVG/Canvas render of the futuristic teal & graphite megaphone */}
+            <div className="relative w-full h-full">
+              <svg viewBox="0 0 500 500" className="w-full h-full transform scale-105 rotate-[-8deg]">
+                <defs>
+                  {/* Gradients */}
+                  <linearGradient id="bodyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#1DBF98" />
+                    <stop offset="35%" stopColor="#0E8A6D" />
+                    <stop offset="70%" stopColor="#1E293B" />
+                    <stop offset="100%" stopColor="#0F172A" />
+                  </linearGradient>
+
+                  <linearGradient id="coneGrad" x1="0%" y1="0%" x2="100%" y2="80%">
+                    <stop offset="0%" stopColor="#2DD4BF" />
+                    <stop offset="45%" stopColor="#14B8A6" />
+                    <stop offset="85%" stopColor="#0F766E" />
+                    <stop offset="100%" stopColor="#134E4A" />
+                  </linearGradient>
+
+                  <linearGradient id="metalRim" x1="0%" y1="100%" x2="100%" y2="0%">
+                    <stop offset="0%" stopColor="#F8FAFC" />
+                    <stop offset="30%" stopColor="#94A3B8" />
+                    <stop offset="70%" stopColor="#334155" />
+                    <stop offset="100%" stopColor="#E2E8F0" />
+                  </linearGradient>
+
+                  <linearGradient id="glowG" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#D8F83A" stopOpacity="0.8" />
+                    <stop offset="100%" stopColor="#1DBF98" stopOpacity="0" />
+                  </linearGradient>
+
+                  <filter id="glassShine" x="-20%" y="-20%" width="140%" height="140%">
+                    <feGaussianBlur in="SourceAlpha" stdDeviation="6" />
+                    <feOffset dx="4" dy="6" result="offsetblur" />
+                    <feComponentTransfer>
+                      <feFuncA type="linear" slope="0.4" />
+                    </feComponentTransfer>
+                    <feMerge>
+                      <feMergeNode />
+                      <feMergeNode in="SourceGraphic" />
+                    </feMerge>
+                  </filter>
+                </defs>
+
+                {/* Ambient glow circle */}
+                <ellipse cx="260" cy="270" rx="190" ry="140" fill="url(#glowG)" opacity="0.15" />
+
+                {/* Handle & Grip */}
+                <path
+                  d="M 210 270 L 160 410 C 155 425 168 438 185 435 L 225 425 C 238 422 245 410 248 395 L 270 280 Z"
+                  fill="#1E293B"
+                  stroke="#334155"
+                  strokeWidth="3"
+                />
+                {/* Grip grooves */}
+                <line x1="175" y1="340" x2="235" y2="330" stroke="#0F172A" strokeWidth="4" />
+                <line x1="180" y1="365" x2="230" y2="355" stroke="#0F172A" strokeWidth="4" />
+                <line x1="185" y1="390" x2="225" y2="380" stroke="#0F172A" strokeWidth="4" />
+
+                {/* Back Cylinder Housing */}
+                <ellipse cx="160" cy="200" rx="42" ry="75" fill="#0F172A" />
+                <path d="M 160 125 L 250 145 L 250 255 L 160 275 Z" fill="url(#bodyGrad)" />
+                <ellipse cx="250" cy="200" rx="30" ry="55" fill="#134E4A" />
+
+                {/* Main Conical Bell (Teal gloss) */}
+                <path
+                  d="M 240 150 L 400 90 L 415 310 L 240 250 Z"
+                  fill="url(#coneGrad)"
+                  filter="url(#glassShine)"
+                />
+
+                {/* Highlight stripe */}
+                <path
+                  d="M 242 165 L 398 115 L 400 135 L 242 180 Z"
+                  fill="white"
+                  opacity="0.3"
+                />
+
+                {/* Front Chrome Rim */}
+                <ellipse cx="405" cy="200" rx="35" ry="110" fill="#090D16" />
+                <ellipse cx="405" cy="200" rx="33" ry="106" fill="none" stroke="url(#metalRim)" strokeWidth="9" />
+
+                {/* Center Core Speaker Node */}
+                <ellipse cx="385" cy="200" rx="16" ry="38" fill="#1E293B" />
+                <ellipse cx="388" cy="200" rx="10" ry="24" fill="#1DBF98" />
+                <circle cx="390" cy="198" r="4" fill="#D8F83A" />
+
+                {/* Top Trigger & Accents */}
+                <rect x="235" y="120" width="35" height="15" rx="4" fill="#F8FAFC" opacity="0.9" />
+                <circle cx="210" cy="180" r="6" fill="#D8F83A" />
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        {/* Under the giant word, left: Tagline + Description */}
+        <div className="w-full mt-6 sm:mt-10 flex flex-col md:flex-row items-start md:items-end justify-between gap-8">
+          <div className="max-w-xl">
+            <p
+              id="slogan"
+              className="font-unbounded text-lg sm:text-2xl md:text-3xl font-bold tracking-tight text-[#121214] leading-tight"
+            >
+              от стратегии <br className="hidden sm:inline" />
+              <span className="text-[#71717A] font-medium">до рекламной кампании.</span>
+            </p>
+            <p className="text-sm sm:text-base text-[#52525B] mt-4 max-w-lg leading-relaxed font-normal">
+              Курс для тех, кто хочет понимать и строить маркетинг в компании, системно управлять инструментами и защищать стратегии перед топ-менеджментом.
+            </p>
+          </div>
+
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 w-full md:w-auto">
+            <button
+              onClick={onEnrollClick}
+              className="btn-magnetic w-full sm:w-auto px-8 py-4 rounded-full bg-[#121214] text-[#F6F6F5] font-unbounded text-xs sm:text-sm font-bold tracking-wider uppercase hover:bg-[#27272A] transition-all duration-300 shadow-xl flex items-center justify-center gap-2"
+            >
+              <Sparkles className="w-4 h-4 text-[#D8F83A]" />
+              <span>Забронировать место</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom bar: small gray Scroll on bottom-left + Duration badge */}
+      <div className="max-w-7xl mx-auto w-full flex items-center justify-between pt-6 border-t border-black/5 z-10">
+        <a
+          id="scroll"
+          href="#about"
+          className="inline-flex items-center gap-2 text-xs font-mono text-[#71717A] hover:text-black uppercase tracking-widest transition-colors"
+        >
+          <ArrowDown className="w-3.5 h-3.5 animate-bounce" />
+          <span>Scroll</span>
+        </a>
+
+        <div className="text-xs font-mono text-[#71717A] text-right">
+          <span>24 НОЯБРЯ — 20 МАРТА · 36 ЗАНЯТИЙ</span>
+        </div>
+      </div>
+
+      {/* Video Modal */}
+      {isVideoModalOpen && (
+        <div className="fixed inset-0 z-[120] bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
+          <div className="bg-[#121214] border border-white/10 rounded-2xl max-w-3xl w-full p-6 relative">
+            <button
+              onClick={() => setIsVideoModalOpen(false)}
+              className="absolute top-4 right-4 text-white/70 hover:text-white text-xs font-mono tracking-widest uppercase p-2"
+            >
+              ЗАКРЫТЬ [ESC]
+            </button>
+            <div className="aspect-video bg-black rounded-xl overflow-hidden flex items-center justify-center relative mt-4 border border-white/5">
+              <div className="text-center p-8">
+                <div className="w-16 h-16 rounded-full bg-white/10 mx-auto flex items-center justify-center mb-4 text-[#D8F83A]">
+                  <Play className="w-8 h-8 fill-current ml-1" />
+                </div>
+                <h4 className="font-unbounded text-lg text-white font-bold mb-2">Видео-манифест курса mads</h4>
+                <p className="text-xs text-[#A1A1AA] max-w-md mx-auto">
+                  15 лет опыта, реальные кейсы от PepsiCo, SPLAT, BBDO и Utair в одном видео.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+    </section>
+  );
+};

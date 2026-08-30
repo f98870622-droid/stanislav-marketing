@@ -1,0 +1,150 @@
+ROLE
+You are a world-class Awwwards-winning creative technologist (lead art director + frontend). Build ONE complete, production-ready single-file website (index.html with embedded CSS + JS). No placeholders, no lorem ipsum, no “coming soon”. The site must look like a 2026 Site of the Day: cinematic, premium, “future of digital education”, not a typical course landing, not Bootstrap, not generic SaaS.
+
+VISUAL REFERENCES (MUST MATCH THIS FEEL, NOT COPY LOGOS)
+Primary look: sohub.digital first screen + agency case sites on Awwwards.
+- First viewport: LIGHT off-white / #F5F5F5, huge breathing space, almost empty luxury.
+- Header: left lowercase logo “mads” in heavy black geometric sans. Top-right TWO PILL BUTTONS: light-gray pill “ЗАПИСАТЬСЯ +” and solid black pill “МЕНЮ” with a small dark circle containing TWO WHITE DOTS.
+- Hero: one GIANT lowercase word “маркетинг” spanning most of the width, ultra-bold, tight tracking, sitting slightly to the RIGHT of center.
+- Over the word: a photoreal 3D marketing object (teal/graphite megaphone or similar gadget). PNG with TRANSPARENT background (no gray square). The object OVERLAPS the type, slightly covering the last letters, like a 3D product sitting on the headline.
+- Bottom-left: small gray “Scroll”.
+- Under the giant word, left: short tagline “от стратегии / до рекламной кампании.”
+- After hero, the rest of the site can shift into a darker, more cinematic editorial sequence (deep charcoal / ink, cream type) OR stay light editorial — but keep one coherent luxury system. Prefer: light hero, then ink/cream editorial with gold/acid accents used sparingly (not carnival, not MLM, not yellow stickers everywhere).
+- Typography: Inter Tight / Unbounded / Neue Montreal vibe. Giant mashed headings like “чтоособенного?”, “нестесняйся”, “почемуmads”.
+- Grain overlay, custom cursor (mix-blend difference on desktop only), magnetic pills, smooth scroll (Lenis if CDN works; if not, native smooth).
+- Easing: cubic-bezier(0.16, 1, 0.3, 1) and expo.out. Timings 0.7–1.2s. Scroll-triggered fade/slide-up, split-text on H1, sticky progress bar, GO UP button.
+- 3D/WebGL optional: subtle mouse-parallax on the megaphone. No broken libraries: if a CDN fails, site must still work (preloader must always dismiss).
+- Mobile-first, no horizontal scroll. Full-screen overlay menu from the black MENU pill.
+
+TECH CONSTRAINTS
+- One HTML file, Russian language, semantic IDs so each object is inspectable in DevTools:
+  #logo, #knopka-zapisatsya, #knopka-menu, #slovo-marketing, #rupor, #slogan, #scroll, then section ids below.
+- GSAP + ScrollTrigger from jsDelivr. Lenis from npm CDN `lenis@1.1.18` (NOT studio-freight github — that URL is dead).
+- Preloader allowed only if it ALWAYS hides (timeout fallback).
+- Forms: client-side success state, no backend.
+- Images: CSS/SVG/generated 3D-looking PNG via CSS or inline SVG; megaphone can be a high-quality generated asset with transparent alpha.
+
+BRAND / PRODUCT
+School: mads
+Course: «Маркетинг: от разработки и продажи стратегии до реализации рекламной кампании»
+Start: 24 ноября. Format: теория и практика. Mode: онлайн.
+Duration: 24 ноября — 20 марта. 1 раздел, 36 занятий.
+Result: student builds a marketing strategy, experts review it. Template/document provided. Career: interview prep, HR at graduation, portfolio sent to agencies.
+Referral: recommend mads → 5 000 ₽.
+
+KEEP ALL FACTS. You MAY rewrite microcopy to sound more premium/future, but DO NOT invent fake awards, prices, or people. Do not change prices, dates, names, stats.
+
+PAGE STRUCTURE (IN THIS ORDER)
+
+0) Preloader (optional, cinematic, must end)
+1) HEADER #topbar — logo + two pills + overlay menu
+2) HERO #hero — as sohub: giant word, #rupor, #slogan, #scroll. Meta chips: когда 24 ноября / формат теория и практика / как онлайн. Optional play-video, but do not block the layout.
+3) ABOUT #about
+4) PRACTICE #practice — two cards: новички vs опытные
+5) SPECIAL #special
+6) FORMATS #formats — live course vs self-paced
+7) SKILLS #skills — 12 skills
+8) CAREER #career
+9) WHO #who
+10) BONUS #bonus — referral form
+11) STATS #stats — 80% after course / 15% during course
+12) TEACHERS #teachers — author Alina + letter + curators + speakers
+13) PROGRAM #program — 36 lessons, accordion or timeline
+14) PRICE #price — two tariffs
+15) ENROLL #enroll — consultation form
+16) REVIEWS #reviews — 4 student reviews
+17) WHY #why — why mads
+18) INDUSTRY #industry — 4 industry quotes
+19) FAQ #faq
+20) CTA #cta — mashed “нестесняйся” + enroll
+21) FOOTER — nav, contacts, socials, legal
+
+COPY (RUSSIAN — USE THIS CONTENT)
+
+Title: Маркетинг — от стратегии до рекламной кампании
+About lede: О маркетинге сделано много курсов и книг — так много, что в обилии информации легко потеряться. Какие-то курсы слишком общие и не включают практических заданий; другие узкоспециализированы и не дают общей картинки.
+Then: Этот курс научит понимать и строить маркетинг в компании и осознанно им управлять. Последовательный путь по всем инструментам. Стратегия на реальных задачах под присмотром профессионалов. Результат — стратегия, которую оценивают топовые эксперты. Можно свой бриф или учебный. Темплейт документа. Подготовка к собеседованию, HR на выпускном, рассылка портфолио, ивенты с руководителями.
+
+Practice: мини-группы, роли, презентация, фидбек.
+Novices (<3 years): учебный проект в мини-группе.
+Experienced: свой проект если данные за первые 2 недели после вебинара + работа весь курс, иначе учебный бриф.
+
+Special: 15+ years practice, local + international. Authors use methods daily. Lectures from global corps, Russian majors, startups. Dense knowledge + feedback from industry people.
+
+Formats:
+- Полноценный онлайн-курс: live speakers, curators, homework review, final project. 18 seats left. 17 259₽/мес (was 19 372). 172 590₽ (was 193 723).
+- Самостоятельное: recorded lectures + homework vs expert solutions. 8 769₽/мес (was 11 284). 87 690₽ (was 112 846).
+Installments: без переплаты.
+
+Skills list (keep all 12). Career list (keep all 5). Who: marketers/strategists/accounts; juniors; seniors/mids who became heads; business owners.
+
+Author: Алина Щербинина, директор по маркетингу и стратегии. Bio: PepsiCo Россия client marketing; PepsiCo drinks franchise BUKCA 11 countries; Naked, Alvalle, Quaker; Lipton Ice Tea Moscow & London; Utair marketing from zero + rebrand, Cannes Lion for creative strategy; P&G Moscow & Geneva Naturella; Blend-a-med extra-premium launch; entrepreneur, Union of Journalists, PhD economics, 5 languages.
+Author letter: 2005 Delovoy Peterburg brand-manager 3000$; marketing as tech+humanities; course = career compilation; Tyumen marketing team from zero, Cannes Lion, 10x cheaper than S7; foundations + changing tools; company size and budget differences.
+
+Curators: Виктория Павликова, senior brand manager PepsiCo. Анастасия Нидзий, бренд-директор SPLAT Global.
+Speakers: Дамир Самерханов Sixième Son; Елена Паламарчук Jekyll&Hyde; Антон Клейменов Haleon; Мария Уколова OMD OM Group; Анастасия Каслина rhetoric; Алина Щербинина; Аня Кау-Тен-Чжи ПИК; Оля Лоренц True Search; Катя Гусакова paid social/programmatic; Олег Клепиков multisensory.
+
+36 lessons (date, time, title, type, speaker) — include ALL:
+24 ноя 11:00 Вебинар — знакомство / Алина
+1 дек 19:00 Обзор маркетинга / Алина
+5 дек 11:00 Созвон с кураторами
+8 дек 19:00 Разработка стратегии: ёмкость рынка, целевая, ROI / Алина
+10 дек 19:00 Сторителлинг / Каслина
+12 дек 11:00 Созвон кураторы
+15 дек 19:00 Какие бывают исследования / Клейменов
+17 дек 19:00 Созвон кураторы
+19 дек 11:00 Исследования практика / Клейменов
+22 дек 19:00 Покупатель: поиск, сегменты, потенциал / Нидзий
+24 дек 19:00 Практика покупатель / Нидзий
+26 дек 11:00 Созвон кураторы
+12 янв 19:00 Продуктовый подход / инновации / Нидзий
+14 янв 19:00 Созвон
+16 янв 11:00 Практика продуктовый подход
+19 янв 19:00 Брендинг / Паламарчук
+21 янв 19:00 Созвон
+23 янв 11:00 Практика брендинг
+26 янв 19:00 Медийная кампания / Уколова
+28 янв 19:00 Созвон
+30 янв 11:00 Практика медиа
+2 фев 19:00 Paid Social / Гусакова
+4 фев 19:00 Созвон
+6 фев 11:00 Programmatic / Гусакова
+9 фев 19:00 Визуал / Кау-Тен-Чжи
+11 фев 19:00 Звук / Самерханов
+13 фев 11:00 Оценка креатива / Алина
+16 фев 19:00 Сторителлинг практика / Каслина
+18 фев 19:00 Мультисенсорный маркетинг / Клепиков
+20/27 фев, 6 мар созвоны кураторов
+9 мар 19:00 Как продавать себя на интервью / Лоренц
+11 мар 19:00 Карьерная консультация / Автор или HR
+13 мар 11:00 Q&A интервью / Лоренц
+20 мар 11:00 Защита стратегии / Алина и кураторы
+
+Forms:
+Enroll: Имя, Фамилия, Email, Телефон, Телеграм, согласие на ПДн (required), optional ads consent. Submit → success.
+Referral: твоё имя, кого рекомендуешь, email, telegram.
+
+Reviews (keep names):
+Елизавета Андреева · biocad
+Людмила Усольцева · поле.рф
+Катя Масленникова · Сколково
+Лиза Андреева · Mars / Wrigley / CMI
+
+Why mads: 13 years; Young Glory 2020; Red Apple 5 times; 200+ experts; Instinct BBDO Leo Burnett Saatchi Slava Possible Friends R/GA London; community + jobs.
+
+Industry quotes: Роман Фирайнер Instinct CCO; Денис Лапшинов Slava; Алина Pepsi CMO; Дима Тютьков tutkovbudkov.
+
+FAQ: start 24 nov–20 mar 36 lessons; two formats; own project rules; installment no interest; employment help.
+
+Footer: +7 (495) 150-75-66, you@madscourses.com, VK, YouTube, Telegram, WhatsApp, MAX, privacy, terms, cookies.
+
+ANIMATION SPEC (AWWWARDS)
+- Page load: H1 lines clip-up with 8–12% stagger, megaphone scale 0.92→1 with delay 0.3s, pills fade.
+- Scroll: each section reveal y:40 opacity 0→1. Stats count up 80 and 15.
+- Hover: pills scale 1.03; cards lift 6–8px; person rows translateX 6px; magnetic buttons mild.
+- Menu: fullscreen cream or ink overlay, huge type, close on link click.
+- Marquee optional: one thin gold/ink strip with “стратегия * бренд * медиа * креатив * карьера” only if it stays elegant.
+- prefers-reduced-motion: disable motion.
+
+OUTPUT
+Return a single complete index.html. Beautiful on 1440px and 390px. Pixel-tight spacing. This must feel like the future of a top advertising school website, not a template.

@@ -1,0 +1,6 @@
+{
+  "name": "mads — Маркетинг: от стратегии до рекламной кампании",
+  "description": "Официальный сайт курса по маркетингу школы mads: от разработки и продажи стратегии до реализации рекламной кампании. 36 занятий, старт 24 ноября.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
