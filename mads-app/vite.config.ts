@@ -2,15 +2,27 @@ import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
 import { defineConfig } from 'vite';
-import { viteSingleFile } from 'vite-plugin-singlefile';
 
 export default defineConfig(() => {
   return {
     base: './',
-    plugins: [react(), tailwindcss(), viteSingleFile()],
+    plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
         '@': path.resolve(__dirname, '.'),
+      },
+    },
+    build: {
+      cssCodeSplit: false,
+      rollupOptions: {
+        input: path.resolve(__dirname, 'src/main.tsx'),
+        output: {
+          format: 'iife',
+          name: 'MadsApp',
+          inlineDynamicImports: true,
+          entryFileNames: 'mads.js',
+          assetFileNames: 'mads[extname]',
+        },
       },
     },
     server: {
