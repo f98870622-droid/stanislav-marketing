@@ -67,25 +67,24 @@ export const Navbar: React.FC<NavbarProps> = ({ onEnrollClick }) => {
           </div>
 
           {/* Top-right TWO PILL BUTTONS */}
-          <div className="flex items-center gap-3 sm:gap-4">
-            {/* Light-gray pill: ЗАПИСАТЬСЯ + */}
+          <div className="flex items-center gap-2 sm:gap-4 shrink-0">
             <button
               id="knopka-zapisatsya"
               onClick={onEnrollClick}
-              className="btn-magnetic group relative inline-flex items-center justify-center px-5 sm:px-7 py-2.5 sm:py-3 rounded-full bg-[#EAEAEA] hover:bg-[#DFDFDF] dark:bg-[#222226] dark:hover:bg-[#2A2A30] text-[#121214] dark:text-[#F6F6F5] text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all duration-300 shadow-sm hover:shadow"
+              className="btn-magnetic group relative inline-flex h-10 sm:h-11 items-center justify-center gap-1 px-3 sm:px-7 rounded-full bg-[#EAEAEA] hover:bg-[#DFDFDF] dark:bg-[#222226] dark:hover:bg-[#2A2A30] text-[#121214] dark:text-[#F6F6F5] text-[11px] sm:text-sm font-semibold tracking-wide sm:tracking-wider uppercase whitespace-nowrap transition-all duration-300 shadow-sm hover:shadow"
             >
-              <span>ЗАПИСАТЬСЯ +</span>
+              <span>Записаться</span>
+              <span aria-hidden="true">+</span>
             </button>
 
-            {/* Solid black pill: МЕНЮ with small dark circle containing TWO WHITE DOTS */}
             <button
               id="knopka-menu"
               onClick={() => setIsMenuOpen(true)}
-              className="btn-magnetic group relative inline-flex items-center gap-2.5 px-5 sm:px-7 py-2.5 sm:py-3 rounded-full bg-[#121214] hover:bg-[#222226] dark:bg-[#F6F6F5] dark:hover:bg-[#EAEAEA] text-[#F6F6F5] dark:text-[#121214] text-xs sm:text-sm font-bold tracking-wider uppercase transition-all duration-300 shadow-md"
+              className="btn-magnetic group relative inline-flex h-10 sm:h-11 items-center gap-2 px-3 sm:px-7 rounded-full bg-[#121214] hover:bg-[#222226] dark:bg-[#F6F6F5] dark:hover:bg-[#EAEAEA] text-[#F6F6F5] dark:text-[#121214] text-[11px] sm:text-sm font-bold tracking-wide sm:tracking-wider uppercase whitespace-nowrap transition-all duration-300 shadow-md"
               aria-label="Открыть меню"
             >
-              <span>МЕНЮ</span>
-              <div className="w-5 h-5 rounded-full bg-[#2A2A2E] dark:bg-[#D4D4D8] flex items-center justify-center gap-[3px] group-hover:rotate-90 transition-transform duration-300">
+              <span>Меню</span>
+              <div className="w-5 h-5 shrink-0 rounded-full bg-[#2A2A2E] dark:bg-[#D4D4D8] flex items-center justify-center gap-[3px] group-hover:rotate-90 transition-transform duration-300">
                 <span className="w-1 h-1 rounded-full bg-white dark:bg-black"></span>
                 <span className="w-1 h-1 rounded-full bg-white dark:bg-black"></span>
               </div>
