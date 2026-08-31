@@ -62,13 +62,13 @@ export const ProgramSection: React.FC = () => {
 
   const renderLesson = (lesson: Lesson) => (
     <div
-      className="p-5 sm:p-6 rounded-2xl bg-[#18181C] border border-white/5 hover:border-white/20 transition-all duration-200 flex flex-col md:flex-row md:items-center justify-between gap-4 group"
+      className="px-4 py-4 sm:p-6 rounded-2xl bg-[#18181C] border border-white/5 hover:border-white/20 transition-all duration-200 flex flex-col md:flex-row md:items-center justify-between gap-3 md:gap-4 group"
     >
-      <div className="flex items-start md:items-center gap-4 min-w-0">
-        <span className="font-mono text-xs text-[#52525B] group-hover:text-[#D8F83A] transition-colors w-8 shrink-0">
-          #{lesson.id < 10 ? `0${lesson.id}` : lesson.id}
-        </span>
-        <div className="flex items-center gap-2 min-w-[130px] font-mono text-xs shrink-0">
+      <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-4 min-w-0 w-full">
+        <div className="flex items-center gap-2 font-mono text-xs shrink-0">
+          <span className="text-[#52525B] group-hover:text-[#D8F83A] transition-colors w-7">
+            #{lesson.id < 10 ? `0${lesson.id}` : lesson.id}
+          </span>
           <span className="text-[#D8F83A] font-semibold">{lesson.date}</span>
           <span className="text-[#71717A]">·</span>
           <span className="text-[#A1A1AA] flex items-center gap-1">
@@ -76,12 +76,12 @@ export const ProgramSection: React.FC = () => {
             {lesson.time}
           </span>
         </div>
-        <div className="space-y-1 min-w-0">
-          <div className="text-sm sm:text-base font-semibold text-white">{lesson.title}</div>
-          <div className="text-[11px] font-mono text-[#71717A]">{lesson.module}</div>
+        <div className="min-w-0">
+          <div className="text-sm sm:text-base font-semibold text-white leading-snug">{lesson.title}</div>
+          <div className="text-[11px] font-mono text-[#71717A] mt-1">{lesson.module}</div>
         </div>
       </div>
-      <div className="flex items-center gap-3 self-end md:self-auto shrink-0">
+      <div className="flex items-center justify-between md:justify-end gap-3 md:self-auto shrink-0">
         <div className="flex items-center gap-1.5 text-xs text-[#A1A1AA]">
           <User className="w-3.5 h-3.5 text-[#71717A]" />
           <span>{lesson.speaker}</span>
@@ -97,7 +97,7 @@ export const ProgramSection: React.FC = () => {
     <section
       id="program"
       ref={sectionRef}
-      className="relative scroll-mt-28 bg-[#121214] text-[#F6F6F5] py-24 sm:py-32 px-6 sm:px-10 border-t border-white/5"
+      className="relative scroll-mt-28 bg-[#121214] text-[#F6F6F5] py-20 sm:py-32 px-5 sm:px-10 border-t border-white/5"
     >
       <div className="max-w-7xl mx-auto">
         <div className="flex items-center gap-3 text-xs font-mono text-[#D8F83A] uppercase tracking-widest mb-6">
@@ -105,7 +105,7 @@ export const ProgramSection: React.FC = () => {
           <span>05 / Учебный план</span>
         </div>
 
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-12 gap-4 md:gap-6">
           <div>
             <h2 className="font-unbounded text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#F6F6F5]">
               36 занятий, 24 ноября — 20 марта
@@ -151,7 +151,7 @@ export const ProgramSection: React.FC = () => {
           </div>
         )}
 
-        <div className="space-y-3">
+        <div className="space-y-2.5 sm:space-y-3">
           {previewSource.map((lesson, i) => (
             <div
               key={lesson.id}

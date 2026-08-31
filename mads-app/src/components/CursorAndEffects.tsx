@@ -1,29 +1,46 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { ArrowUp } from 'lucide-react';
 
 export const CursorAndEffects: React.FC = () => {
-  const [scrollProgress, setScrollProgress] = useState(0);
+  const barRef = useRef<HTMLDivElement>(null);
   const [showGoUp, setShowGoUp] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const winScroll = document.documentElement.scrollTop;
-      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
-      setScrollProgress(scrolled);
-      setShowGoUp(winScroll > 600);
+    const bar = barRef.current;
+    if (!bar) return;
+
+    let raf = 0;
+    let shown = false;
+
+    const tick = () => {
+      const y = window.scrollY || document.documentElement.scrollTop;
+      const max = Math.max(
+        0,
+        document.documentElement.scrollHeight - window.innerHeight
+      );
+      const p = max > 0 ? Math.min(1, Math.max(0, y / max)) : 0;
+      bar.style.transform = `scaleX(${p})`;
+
+      const next = y > 600;
+      if (next !== shown) {
+        shown = next;
+        setShowGoUp(next);
+      }
+
+      raf = requestAnimationFrame(tick);
     };
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
   }, []);
 
   return (
     <>
-      <div className="fixed top-0 left-0 w-full h-[2px] z-[100] bg-transparent pointer-events-none">
+      <div className="fixed top-0 left-0 w-full h-[2px] z-[100] pointer-events-none overflow-hidden">
         <div
-          className="h-full bg-[#D8F83A] transition-all duration-75 ease-out"
-          style={{ width: `${scrollProgress}%` }}
+          ref={barRef}
+          className="h-full w-full origin-left bg-[#D8F83A]"
+          style={{ transform: 'scaleX(0)', willChange: 'transform' }}
         />
       </div>
 
