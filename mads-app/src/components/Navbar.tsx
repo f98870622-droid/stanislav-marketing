@@ -49,15 +49,22 @@ export const Navbar: React.FC<NavbarProps> = ({ onEnrollClick }) => {
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 sm:px-10 flex items-center justify-between">
-          {/* Logo: lowercase 'mads' in heavy black geometric sans */}
-          <a
-            id="logo"
-            href="#hero"
-            className="font-unbounded text-2xl sm:text-3xl font-black tracking-tighter text-[#121214] dark:text-[#F6F6F5] transition-transform duration-300 hover:scale-105"
-            aria-label="mads school"
-          >
-            mads
-          </a>
+          <div className="flex items-center gap-3 sm:gap-5 min-w-0">
+            <a
+              href="../index.html"
+              className="shrink-0 text-[10px] sm:text-xs font-semibold tracking-[0.14em] uppercase text-[#71717A] hover:text-[#121214] dark:hover:text-[#F6F6F5] transition-colors"
+            >
+              Станислав
+            </a>
+            <a
+              id="logo"
+              href="#hero"
+              className="font-unbounded text-2xl sm:text-3xl font-black tracking-tighter text-[#121214] dark:text-[#F6F6F5] transition-transform duration-300 hover:scale-105"
+              aria-label="mads school"
+            >
+              mads
+            </a>
+          </div>
 
           {/* Top-right TWO PILL BUTTONS */}
           <div className="flex items-center gap-3 sm:gap-4">
@@ -96,7 +103,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onEnrollClick }) => {
         }`}
       >
         <div className="flex items-center justify-between border-b border-white/10 pb-6">
-          <span className="font-unbounded text-2xl font-black tracking-tighter">mads</span>
+          <a href="../index.html" className="text-xs font-semibold tracking-widest uppercase text-[#A1A1AA] hover:text-white transition-colors">
+            ← Станислав
+          </a>
           <button
             onClick={() => setIsMenuOpen(false)}
             className="flex items-center gap-2 text-sm font-semibold tracking-widest uppercase hover:opacity-70 transition-opacity p-2"

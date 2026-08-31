@@ -3,6 +3,7 @@
 
   var SITE_LABELS = {
     timur: 'Курс по маркетингу',
+    mads: 'Курс по маркетингу',
     'gloris-beauty': 'Салон красоты',
     'custom-cars': 'Детейлинг-центр',
   };
@@ -44,7 +45,7 @@
     complexes: 'Комплексы',
   };
 
-  var SITE_FOLDERS = ['timur', 'gloris-beauty', 'custom-cars'];
+  var SITE_FOLDERS = ['timur', 'mads', 'gloris-beauty', 'custom-cars'];
 
   function slugToTitle(slug) {
     return slug.replace(/\.html$/i, '').replace(/[-_]+/g, ' ');
