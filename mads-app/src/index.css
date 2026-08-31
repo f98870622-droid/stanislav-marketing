@@ -90,3 +90,12 @@
   animation-play-state: paused;
 }
 
+/* Safari iOS zooms focused fields if font-size is under 16px */
+@media (max-width: 1024px) {
+  input:not([type='checkbox']):not([type='radio']),
+  textarea,
+  select {
+    font-size: 16px !important;
+  }
+}
+

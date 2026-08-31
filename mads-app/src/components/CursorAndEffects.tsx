@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { ArrowUp } from 'lucide-react';
 
 export const CursorAndEffects: React.FC = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -34,18 +35,7 @@ export const CursorAndEffects: React.FC = () => {
           aria-label="Наверх"
           style={{ isolation: 'isolate', mixBlendMode: 'normal' }}
         >
-          <span
-            aria-hidden="true"
-            style={{
-              display: 'block',
-              width: 0,
-              height: 0,
-              borderLeft: '7px solid transparent',
-              borderRight: '7px solid transparent',
-              borderBottom: '11px solid #111111',
-              marginBottom: 2,
-            }}
-          />
+          <ArrowUp className="h-5 w-5 text-[#111111]" strokeWidth={2.4} />
         </button>
       )}
     </>

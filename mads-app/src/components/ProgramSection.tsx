@@ -145,7 +145,7 @@ export const ProgramSection: React.FC = () => {
                 placeholder="Тема или спикер"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-9 pr-4 py-2 rounded-xl bg-[#202025] text-xs text-white placeholder-[#71717A] border border-white/5 focus:outline-none focus:border-[#D8F83A]"
+                className="w-full pl-9 pr-4 py-2 rounded-xl bg-[#202025] text-base text-white placeholder-[#71717A] border border-white/5 focus:outline-none focus:border-[#D8F83A]"
               />
             </div>
           </div>

@@ -178,7 +178,7 @@ export const EnrollSection: React.FC<EnrollSectionProps> = ({ selectedTariff = '
                         onChange={(e) =>
                           setFormData({ ...formData, firstName: capitalizeName(e.target.value) })
                         }
-                        className="w-full px-4 py-3.5 rounded-xl bg-[#F6F6F5] border border-black/10 text-[#121214] placeholder-[#A1A1AA] text-sm focus:outline-none focus:border-[#121214] transition-colors"
+                        className="w-full px-4 py-3.5 rounded-xl bg-[#F6F6F5] border border-black/10 text-[#121214] placeholder-[#A1A1AA] text-base focus:outline-none focus:border-[#121214] transition-colors"
                       />
                     </div>
                     <div>
@@ -193,7 +193,7 @@ export const EnrollSection: React.FC<EnrollSectionProps> = ({ selectedTariff = '
                         onChange={(e) =>
                           setFormData({ ...formData, lastName: capitalizeName(e.target.value) })
                         }
-                        className="w-full px-4 py-3.5 rounded-xl bg-[#F6F6F5] border border-black/10 text-[#121214] placeholder-[#A1A1AA] text-sm focus:outline-none focus:border-[#121214] transition-colors"
+                        className="w-full px-4 py-3.5 rounded-xl bg-[#F6F6F5] border border-black/10 text-[#121214] placeholder-[#A1A1AA] text-base focus:outline-none focus:border-[#121214] transition-colors"
                       />
                     </div>
                   </div>
@@ -210,7 +210,7 @@ export const EnrollSection: React.FC<EnrollSectionProps> = ({ selectedTariff = '
                         placeholder="you@domain.com"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="w-full px-4 py-3.5 rounded-xl bg-[#F6F6F5] border border-black/10 text-[#121214] placeholder-[#A1A1AA] text-sm focus:outline-none focus:border-[#121214] transition-colors"
+                        className="w-full px-4 py-3.5 rounded-xl bg-[#F6F6F5] border border-black/10 text-[#121214] placeholder-[#A1A1AA] text-base focus:outline-none focus:border-[#121214] transition-colors"
                       />
                     </div>
                     <div>
@@ -228,7 +228,7 @@ export const EnrollSection: React.FC<EnrollSectionProps> = ({ selectedTariff = '
                         onChange={(e) =>
                           setFormData({ ...formData, phone: formatRuPhone(e.target.value) })
                         }
-                        className="w-full px-4 py-3.5 rounded-xl bg-[#F6F6F5] border border-black/10 text-[#121214] placeholder-[#A1A1AA] text-sm focus:outline-none focus:border-[#121214] transition-colors"
+                        className="w-full px-4 py-3.5 rounded-xl bg-[#F6F6F5] border border-black/10 text-[#121214] placeholder-[#A1A1AA] text-base focus:outline-none focus:border-[#121214] transition-colors"
                       />
                     </div>
                   </div>
@@ -257,7 +257,7 @@ export const EnrollSection: React.FC<EnrollSectionProps> = ({ selectedTariff = '
                       onChange={(e) =>
                         setFormData({ ...formData, telegram: formatTelegram(e.target.value) })
                       }
-                      className="w-full px-4 py-3.5 rounded-xl bg-[#F6F6F5] border border-black/10 text-[#121214] placeholder-[#A1A1AA] text-sm focus:outline-none focus:border-[#121214] transition-colors"
+                      className="w-full px-4 py-3.5 rounded-xl bg-[#F6F6F5] border border-black/10 text-[#121214] placeholder-[#A1A1AA] text-base focus:outline-none focus:border-[#121214] transition-colors"
                     />
                   </div>
 
