@@ -7,13 +7,13 @@ export const SpecialSection: React.FC = () => {
       icon: Globe2,
       title: '15+ лет практики',
       subtitle: 'Локальный и международный опыт',
-      desc: 'Авторы и лекторы ежедневно применяют эти методы на рынках 11+ стран — от Лондона и Женевы до Москвы.'
+      desc: 'Авторы и лекторы применяют методы на учебных брифах: локальный рынок и экспорт без привязки к чужим офисам.'
     },
     {
       icon: Layers,
       title: 'Живая экспертиза',
       subtitle: 'Корпорации, мейджоры, стартапы',
-      desc: 'Лекции и разборы от директоров PepsiCo, SPLAT Global, Haleon, OMD OM Group, ПИК, Sixième Son и True Search.'
+      desc: 'Лекции и разборы от практиков Northwell Foods, Helix Consumer, MediaNorth, Houseform, Waveform Audio и Hireline.'
     },
     {
       icon: Zap,
@@ -75,7 +75,7 @@ export const SpecialSection: React.FC = () => {
 
                 <div className="mt-8 pt-4 border-t border-white/5 flex items-center justify-between text-xs font-mono text-[#52525B]">
                   <span>0{idx + 1}</span>
-                  <span>MADS SPEC</span>
+                  <span>SREZ SPEC</span>
                 </div>
               </div>
             );

@@ -13,7 +13,7 @@ export const CareerSection: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         <div className="flex items-center gap-3 text-xs font-mono text-[#D8F83A] uppercase tracking-widest mb-6">
           <span className="w-2 h-2 rounded-full bg-[#D8F83A]"></span>
-          <span>06 / Карьерный центр mads</span>
+          <span>06 / Карьерный центр srez</span>
         </div>
 
         <div className="max-w-3xl mb-16">
@@ -47,7 +47,7 @@ export const CareerSection: React.FC = () => {
                 </div>
 
                 <div className="mt-6 pt-4 border-t border-white/5 text-[11px] font-mono text-[#52525B]">
-                  CAREER HUB · MADS NETWORK
+                  CAREER HUB · SREZ NETWORK
                 </div>
               </div>
             );
@@ -63,12 +63,12 @@ export const CareerSection: React.FC = () => {
                 Прямой доступ к закрытому рынку
               </h3>
               <p className="text-sm text-[#94A3B8] leading-relaxed">
-                Компании сами обращаются в mads за стратегами и маркетологами. Выпускники получают офферы еще на этапе подготовки защиты диплома.
+                Компании сами обращаются в srez за стратегами и маркетологами. Выпускники получают офферы еще на этапе подготовки защиты диплома.
               </p>
             </div>
 
             <div className="mt-6 pt-4 border-t border-white/10 text-xs text-[#D8F83A] font-semibold">
-              BBDO · Instinct · Slava · PepsiCo · SPLAT
+              Nordwell · Brick & Pitch · Northwell Foods · Helix Consumer
             </div>
           </div>
         </div>

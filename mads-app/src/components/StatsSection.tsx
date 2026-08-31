@@ -18,7 +18,7 @@ export const StatsSection: React.FC = () => {
             Результаты в цифрах
           </h2>
           <p className="mt-4 text-base sm:text-lg text-[#A1A1AA]">
-            Реальные показатели выпускников школы mads по итогам защиты стратегий.
+            Реальные показатели выпускников школы srez по итогам защиты стратегий.
           </p>
         </div>
 
@@ -45,7 +45,7 @@ export const StatsSection: React.FC = () => {
 
             <div className="mt-8 pt-6 border-t border-white/5 flex items-center justify-between text-xs font-mono text-[#71717A]">
               <span>ПОСЛЕ ВЫПУСКА</span>
-              <span>MADS RESEARCH 2024–2026</span>
+              <span>SREZ RESEARCH 2024–2026</span>
             </div>
           </div>
 

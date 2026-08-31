@@ -1,5 +1,4 @@
 import React from 'react';
-import { ArrowUp } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   const scrollToTop = () => {
@@ -15,14 +14,14 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 pb-16 border-b border-white/5">
           {/* Logo & Manifesto */}
           <div className="lg:col-span-5 space-y-4">
-            <a href="#hero" className="font-unbounded text-3xl font-black tracking-tighter text-white inline-block">
-              mads
+            <a href="#hero" className="font-unbounded text-3xl font-black tracking-tighter lowercase text-white inline-block">
+              srez
             </a>
             <p className="text-sm text-[#A1A1AA] max-w-sm leading-relaxed">
-              Школа креативных и маркетинговых коммуникаций. Обучаем практиков, создающих будущее брендов с 2013 года.
+              Школа маркетинговых коммуникаций. Учебный лендинг для портфолио.
             </p>
             <div className="pt-2 text-xs font-mono text-[#71717A]">
-              13 ЛЕТ ОБРАЗОВАНИЯ В РЕКЛАМЕ И СТРАТЕГИИ
+              ДЕМО-КЕЙС КУРСА, НЕ ДЕЙСТВУЮЩАЯ ШКОЛА
             </div>
           </div>
 
@@ -32,17 +31,17 @@ export const Footer: React.FC = () => {
               КОНТАКТЫ
             </div>
             <p className="text-lg sm:text-xl font-unbounded font-bold text-white">
-              <a href="tel:+74951507566" className="hover:text-[#D8F83A] transition-colors">
-                +7 (495) 150-75-66
+              <a href="tel:+79990000000" className="hover:text-[#D8F83A] transition-colors">
+                +7 (999) 000-00-00
               </a>
             </p>
             <p className="text-sm text-[#A1A1AA] font-mono">
-              <a href="mailto:you@madscourses.com" className="hover:text-white transition-colors">
-                you@madscourses.com
+              <a href="mailto:you@srez.courses" className="hover:text-white transition-colors">
+                you@srez.courses
               </a>
             </p>
             <p className="text-xs text-[#71717A] pt-1">
-              Москва, Берсеневский пер., 2, стр. 1
+              Онлайн-школа. Учебный демо-сайт, без реального офиса.
             </p>
           </div>
 
@@ -97,13 +96,13 @@ export const Footer: React.FC = () => {
         {/* Bottom Bar: Legal + Go Up */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#71717A] font-mono">
           <div>
-            © 2013–2026 mads school. Все права защищены.
+            © 2026 srez. Учебный кейс лендинга.
           </div>
 
           <div className="flex flex-wrap items-center gap-6">
-            <a href="#privacy" className="hover:text-white transition-colors">Политика конфиденциальности</a>
-            <a href="#terms" className="hover:text-white transition-colors">Договор оферты</a>
-            <a href="#cookies" className="hover:text-white transition-colors">Cookies</a>
+            <a href="./legal.html" className="hover:text-white transition-colors">Политика конфиденциальности</a>
+            <a href="./legal.html#terms" className="hover:text-white transition-colors">Договор оферты</a>
+            <a href="./legal.html#cookies" className="hover:text-white transition-colors">Cookies</a>
           </div>
 
           <button
@@ -112,7 +111,7 @@ export const Footer: React.FC = () => {
             className="flex items-center gap-2 hover:text-white transition-colors"
           >
             <span>НАВЕРХ</span>
-            <ArrowUp className="w-4 h-4" />
+            <span aria-hidden="true" className="text-[#111111]">↑</span>
           </button>
         </div>
       </div>

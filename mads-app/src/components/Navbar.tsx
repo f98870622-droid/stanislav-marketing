@@ -20,13 +20,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onEnrollClick }) => {
   const navLinks = [
     { label: 'О курсе', href: '#about' },
     { label: 'Практика', href: '#practice' },
-    { label: 'Форматы и цены', href: '#formats' },
-    { label: 'Навыки', href: '#skills' },
-    { label: 'Карьера', href: '#career' },
+    { label: 'Цены', href: '#formats' },
     { label: 'Преподаватели', href: '#teachers' },
-    { label: 'Программа (36 уроков)', href: '#program' },
+    { label: 'Программа', href: '#program' },
     { label: 'Отзывы', href: '#reviews' },
-    { label: 'Почему mads', href: '#why' },
     { label: 'FAQ', href: '#faq' },
   ];
 
@@ -42,36 +39,31 @@ export const Navbar: React.FC<NavbarProps> = ({ onEnrollClick }) => {
     <>
       <header
         id="topbar"
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
-          isScrolled
-            ? 'bg-[#F6F6F5]/90 dark:bg-[#0E0E10]/90 backdrop-blur-md py-4 border-b border-black/5 dark:border-white/5'
-            : 'bg-transparent py-7'
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 bg-[#0E0E10]/95 backdrop-blur-md border-b border-white/10 ${
+          isScrolled ? 'py-4' : 'py-6'
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 sm:px-10 flex items-center justify-between">
-          <div className="flex items-center gap-3 sm:gap-5 min-w-0">
-            <a
-              href="../index.html"
-              className="shrink-0 text-[10px] sm:text-xs font-semibold tracking-[0.14em] uppercase text-[#71717A] hover:text-[#121214] dark:hover:text-[#F6F6F5] transition-colors"
-            >
-              Станислав
-            </a>
-            <a
-              id="logo"
-              href="#hero"
-              className="font-unbounded text-2xl sm:text-3xl font-black tracking-tighter text-[#121214] dark:text-[#F6F6F5] transition-transform duration-300 hover:scale-105"
-              aria-label="mads school"
-            >
-              mads
-            </a>
-          </div>
+          <a
+            id="logo"
+            href="#hero"
+            className="flex items-baseline gap-2 sm:gap-3 min-w-0"
+            aria-label="srez — учебный лендинг курса маркетинга"
+          >
+            <span className="font-unbounded text-2xl sm:text-3xl font-black tracking-tighter lowercase text-[#F6F6F5] transition-transform duration-300 hover:scale-105">
+              srez
+            </span>
+            <span className="hidden sm:inline text-[10px] sm:text-xs font-mono uppercase tracking-wider text-[#A1A1AA] whitespace-nowrap">
+              учебный лендинг
+            </span>
+          </a>
 
           {/* Top-right TWO PILL BUTTONS */}
           <div className="flex items-center gap-2 sm:gap-4 shrink-0">
             <button
               id="knopka-zapisatsya"
               onClick={onEnrollClick}
-              className="btn-magnetic group relative inline-flex h-10 sm:h-11 items-center justify-center gap-1 px-3 sm:px-7 rounded-full bg-[#EAEAEA] hover:bg-[#DFDFDF] dark:bg-[#222226] dark:hover:bg-[#2A2A30] text-[#121214] dark:text-[#F6F6F5] text-[11px] sm:text-sm font-semibold tracking-wide sm:tracking-wider uppercase whitespace-nowrap transition-all duration-300 shadow-sm hover:shadow"
+              className="btn-magnetic group relative inline-flex h-10 sm:h-11 items-center justify-center gap-1 px-3 sm:px-7 rounded-full bg-[#222226] hover:bg-[#2A2A30] text-[#F6F6F5] text-[11px] sm:text-sm font-semibold tracking-wide sm:tracking-wider uppercase whitespace-nowrap transition-all duration-300"
             >
               <span>Записаться</span>
               <span aria-hidden="true">+</span>
@@ -80,13 +72,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onEnrollClick }) => {
             <button
               id="knopka-menu"
               onClick={() => setIsMenuOpen(true)}
-              className="btn-magnetic group relative inline-flex h-10 sm:h-11 items-center gap-2 px-3 sm:px-7 rounded-full bg-[#121214] hover:bg-[#222226] dark:bg-[#F6F6F5] dark:hover:bg-[#EAEAEA] text-[#F6F6F5] dark:text-[#121214] text-[11px] sm:text-sm font-bold tracking-wide sm:tracking-wider uppercase whitespace-nowrap transition-all duration-300 shadow-md"
+              className="btn-magnetic group relative inline-flex h-10 sm:h-11 items-center gap-2 px-3 sm:px-7 rounded-full bg-[#F6F6F5] hover:bg-[#EAEAEA] text-[#121214] text-[11px] sm:text-sm font-bold tracking-wide sm:tracking-wider uppercase whitespace-nowrap transition-all duration-300"
               aria-label="Открыть меню"
             >
               <span>Меню</span>
-              <div className="w-5 h-5 shrink-0 rounded-full bg-[#2A2A2E] dark:bg-[#D4D4D8] flex items-center justify-center gap-[3px] group-hover:rotate-90 transition-transform duration-300">
-                <span className="w-1 h-1 rounded-full bg-white dark:bg-black"></span>
-                <span className="w-1 h-1 rounded-full bg-white dark:bg-black"></span>
+              <div className="w-5 h-5 shrink-0 rounded-full bg-[#D4D4D8] flex items-center justify-center gap-[3px] group-hover:rotate-90 transition-transform duration-300">
+                <span className="w-1 h-1 rounded-full bg-black"></span>
+                <span className="w-1 h-1 rounded-full bg-black"></span>
               </div>
             </button>
           </div>
@@ -102,9 +94,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onEnrollClick }) => {
         }`}
       >
         <div className="flex items-center justify-between border-b border-white/10 pb-6">
-          <a href="../index.html" className="text-xs font-semibold tracking-widest uppercase text-[#A1A1AA] hover:text-white transition-colors">
-            ← Станислав
-          </a>
+          <span className="font-unbounded text-2xl font-black tracking-tighter lowercase">srez</span>
           <button
             onClick={() => setIsMenuOpen(false)}
             className="flex items-center gap-2 text-sm font-semibold tracking-widest uppercase hover:opacity-70 transition-opacity p-2"
@@ -149,18 +139,18 @@ export const Navbar: React.FC<NavbarProps> = ({ onEnrollClick }) => {
               >
                 Записаться на курс <ArrowUpRight className="w-4 h-4" />
               </button>
-              <p className="text-xs text-center text-[#71717A]">Осталось 18 мест на живой поток</p>
+              <p className="text-xs text-center text-[#71717A]">Форма учебная — заявка никуда не уходит</p>
             </div>
 
             <div className="text-xs text-[#71717A] space-y-1 font-mono">
-              <p>+7 (495) 150-75-66</p>
-              <p>you@madscourses.com</p>
+              <p>+7 (999) 000-00-00</p>
+              <p>you@srez.courses</p>
             </div>
           </div>
         </div>
 
         <div className="flex flex-wrap items-center justify-between text-xs text-[#71717A] pt-6 border-t border-white/10 font-mono">
-          <p>© 2026 mads school. All rights reserved.</p>
+          <p>© 2026 srez. Все права защищены.</p>
           <div className="flex gap-6">
             <a href="https://t.me" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">Telegram</a>
             <a href="https://vk.com" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">VK</a>

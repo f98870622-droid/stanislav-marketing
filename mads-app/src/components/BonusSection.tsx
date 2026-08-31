@@ -36,11 +36,11 @@ export const BonusSection: React.FC = () => {
             </div>
 
             <h2 className="font-unbounded text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#F6F6F5] leading-tight mb-6">
-              Рекомендуйте mads и получите <span className="text-[#D8F83A]">5 000 ₽</span>
+              Рекомендуйте srez и получите <span className="text-[#D8F83A]">5 000 ₽</span>
             </h2>
 
             <p className="text-base sm:text-lg text-[#A1A1AA] leading-relaxed mb-6">
-              Если ваш коллега или друг запишется на курс по вашей рекомендации, мы перечислим вам 5 000 ₽ или начислим их в качестве депозита на любые программы школы mads.
+              Если ваш коллега или друг запишется на курс по вашей рекомендации, мы перечислим вам 5 000 ₽ или начислим их в качестве депозита на любые программы школы srez.
             </p>
 
             <ul className="space-y-3 text-sm text-[#D4D4D8]">

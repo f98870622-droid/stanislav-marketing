@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { AUTHOR_DATA, CURATORS_DATA, SPEAKERS_DATA } from '../data';
-import { BookOpen, Award, Sparkles, X, ChevronRight, User } from 'lucide-react';
+import { BookOpen, ChevronRight, X } from 'lucide-react';
+import { PersonPhoto } from './PersonPhoto';
 
 export const TeachersSection: React.FC = () => {
   const [isLetterOpen, setIsLetterOpen] = useState(false);
@@ -13,15 +14,15 @@ export const TeachersSection: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         <div className="flex items-center gap-3 text-xs font-mono text-[#D8F83A] uppercase tracking-widest mb-6">
           <span className="w-2 h-2 rounded-full bg-[#D8F83A]"></span>
-          <span>10 / Преподаватели и кураторы</span>
+          <span>04 / Преподаватели</span>
         </div>
 
         <div className="max-w-3xl mb-16">
           <h2 className="font-unbounded text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#F6F6F5]">
-            Практики мирового уровня
+            Кто ведёт (учебные роли)
           </h2>
           <p className="mt-4 text-base sm:text-lg text-[#A1A1AA]">
-            Люди, которые ежедневно управляют брендами-миллиардниками и создают ключевые тренды индустрии.
+            Имена, компании и фото — для макета. В боевой версии здесь были бы люди с одним конкретным кейсом и цифрой.
           </p>
         </div>
 
@@ -30,13 +31,12 @@ export const TeachersSection: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
             {/* Left Col: Avatar & Badges */}
             <div className="lg:col-span-4 flex flex-col items-start">
-              <div className="relative w-36 h-36 sm:w-44 sm:h-44 rounded-3xl bg-gradient-to-tr from-[#1E293B] to-[#334155] p-1 border border-white/10 overflow-hidden mb-6 flex items-center justify-center">
-                <div className="w-full h-full bg-[#121215] rounded-[22px] flex flex-col items-center justify-center text-center p-4">
-                  <div className="w-16 h-16 rounded-full bg-[#D8F83A]/10 text-[#D8F83A] flex items-center justify-center mb-2">
-                    <User className="w-8 h-8" />
-                  </div>
-                  <span className="font-unbounded text-xs font-bold text-white uppercase">Алина Щербинина</span>
-                </div>
+              <div className="relative w-44 h-44 sm:w-52 sm:h-52 rounded-3xl overflow-hidden mb-6 border border-white/10 shadow-2xl bg-[#1C1C20]">
+                <PersonPhoto
+                  src={AUTHOR_DATA.photo}
+                  alt={AUTHOR_DATA.name}
+                  className="w-full h-full"
+                />
               </div>
 
               <span className="px-3.5 py-1 rounded-full bg-[#D8F83A]/10 text-[#D8F83A] text-xs font-mono mb-2">
@@ -89,9 +89,11 @@ export const TeachersSection: React.FC = () => {
                 key={idx}
                 className="p-8 rounded-3xl bg-[#151518] border border-white/5 hover:border-white/15 transition-all flex items-start gap-5"
               >
-                <div className="w-14 h-14 rounded-2xl bg-[#222226] text-[#D8F83A] flex items-center justify-center shrink-0 font-unbounded text-lg font-bold">
-                  0{idx + 1}
-                </div>
+                <PersonPhoto
+                  src={curator.avatar!}
+                  alt={curator.name}
+                  className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl shrink-0"
+                />
                 <div>
                   <span className="text-[11px] font-mono text-[#D8F83A] uppercase tracking-wider">
                     {curator.tag}
@@ -112,16 +114,21 @@ export const TeachersSection: React.FC = () => {
         <div>
           <h3 className="font-unbounded text-xl sm:text-2xl font-bold text-white mb-6 flex items-center gap-3">
             <span>Приглашенные спикеры</span>
-            <span className="text-xs font-mono text-[#71717A] font-normal">Эксперты узких доменов</span>
+            <span className="text-xs font-mono text-[#71717A] font-normal">Шесть из одиннадцати — остальные в программе</span>
           </h3>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {SPEAKERS_DATA.map((speaker, idx) => (
+            {SPEAKERS_DATA.slice(0, 6).map((speaker, idx) => (
               <div
                 key={idx}
                 className="p-6 rounded-2xl bg-[#151518] border border-white/5 hover:border-white/15 transition-all flex flex-col justify-between"
               >
                 <div>
+                  <PersonPhoto
+                    src={speaker.avatar!}
+                    alt={speaker.name}
+                    className="w-full aspect-square rounded-xl mb-4"
+                  />
                   <span className="text-[10px] font-mono text-[#1DBF98] uppercase tracking-wider px-2 py-0.5 rounded bg-[#1DBF98]/10 inline-block mb-3">
                     {speaker.tag}
                   </span>
@@ -162,10 +169,17 @@ export const TeachersSection: React.FC = () => {
               ))}
             </div>
 
-            <div className="mt-8 pt-6 border-t border-white/10 flex items-center justify-between">
-              <div>
-                <div className="font-unbounded font-bold text-white">Алина Щербинина</div>
-                <div className="text-xs text-[#71717A]">Директор по маркетингу и стратегии</div>
+            <div className="mt-8 pt-6 border-t border-white/10 flex items-center justify-between gap-4">
+              <div className="flex items-center gap-3 min-w-0">
+                <PersonPhoto
+                  src={AUTHOR_DATA.photo}
+                  alt={AUTHOR_DATA.name}
+                  className="w-12 h-12 rounded-full shrink-0"
+                />
+                <div>
+                <div className="font-unbounded font-bold text-white">{AUTHOR_DATA.name}</div>
+                  <div className="text-xs text-[#71717A]">Директор по маркетингу и стратегии</div>
+                </div>
               </div>
               <button
                 onClick={() => setIsLetterOpen(false)}

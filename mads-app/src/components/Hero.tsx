@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Play, ArrowDown, Sparkles } from 'lucide-react';
+import { SPEAKERS_DATA } from '../data';
+import { PersonPhoto } from './PersonPhoto';
 
 interface HeroProps {
   onEnrollClick: () => void;
@@ -43,21 +45,24 @@ export const Hero: React.FC<HeroProps> = ({ onEnrollClick }) => {
             когда <strong className="font-semibold text-black">24 ноября</strong>
           </span>
           <span className="px-3.5 py-1.5 rounded-full bg-[#E8E8E6] text-[#27272A] tracking-wide">
-            формат <strong className="font-semibold text-black">теория и практика</strong>
+            срок <strong className="font-semibold text-black">4 месяца</strong>
           </span>
           <span className="px-3.5 py-1.5 rounded-full bg-[#E8E8E6] text-[#27272A] tracking-wide">
-            как <strong className="font-semibold text-black">онлайн</strong>
+            формат <strong className="font-semibold text-black">онлайн</strong>
           </span>
         </div>
 
         <button
           onClick={() => setIsVideoModalOpen(true)}
-          className="group inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#52525B] hover:text-black transition-colors"
+          className="group inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-wider text-[#52525B] hover:text-black transition-colors"
         >
-          <div className="w-7 h-7 rounded-full bg-[#E8E8E6] group-hover:bg-[#121214] group-hover:text-white transition-all duration-300 flex items-center justify-center">
-            <Play className="w-3 h-3 fill-current ml-0.5" />
-          </div>
-          <span>ТИЗЕР КУРСА (1:20)</span>
+          <span className="relative w-14 h-10 rounded-lg overflow-hidden shrink-0 ring-1 ring-black/10">
+            <img src="./photos/teaser.jpg" alt="" className="w-full h-full object-cover" />
+            <span className="absolute inset-0 bg-black/25 flex items-center justify-center">
+              <Play className="w-3 h-3 fill-white text-white ml-0.5" />
+            </span>
+          </span>
+          <span>Тизер (макет)</span>
         </button>
       </div>
 
@@ -183,21 +188,35 @@ export const Hero: React.FC<HeroProps> = ({ onEnrollClick }) => {
               id="slogan"
               className="font-unbounded text-lg sm:text-2xl md:text-3xl font-bold tracking-tight text-[#121214] leading-tight"
             >
-              от стратегии <br className="hidden sm:inline" />
-              <span className="text-[#71717A] font-medium">до рекламной кампании.</span>
+              связать каналы <br className="hidden sm:inline" />
+              <span className="text-[#71717A] font-medium">с деньгами компании.</span>
             </p>
             <p className="text-sm sm:text-base text-[#52525B] mt-4 max-w-lg leading-relaxed font-normal">
-              Курс для тех, кто хочет понимать и строить маркетинг в компании, системно управлять инструментами и защищать стратегии перед топ-менеджментом.
+              Учебный лендинг курса: стратегия, защита бюджета перед собственником, один кейс за четыре месяца. Имена и компании на странице выдуманы.
             </p>
           </div>
 
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 w-full md:w-auto">
+          <div className="flex flex-col gap-4 w-full md:w-auto">
+            <div className="flex items-center">
+              {SPEAKERS_DATA.slice(0, 5).map((person) => (
+                <PersonPhoto
+                  key={person.name}
+                  src={person.avatar}
+                  alt=""
+                  className="w-10 h-10 rounded-full ring-2 ring-[#F6F6F5] -ml-2 first:ml-0"
+                  fit="cover"
+                />
+              ))}
+              <span className="ml-3 text-xs text-[#52525B]">
+                Учебные роли спикеров
+              </span>
+            </div>
             <button
               onClick={onEnrollClick}
               className="btn-magnetic w-full sm:w-auto px-8 py-4 rounded-full bg-[#121214] text-[#F6F6F5] font-unbounded text-xs sm:text-sm font-bold tracking-wider uppercase hover:bg-[#27272A] transition-all duration-300 shadow-xl flex items-center justify-center gap-2"
             >
               <Sparkles className="w-4 h-4 text-[#D8F83A]" />
-              <span>Забронировать место</span>
+              <span>Оставить заявку</span>
             </button>
           </div>
         </div>
@@ -229,14 +248,15 @@ export const Hero: React.FC<HeroProps> = ({ onEnrollClick }) => {
             >
               ЗАКРЫТЬ [ESC]
             </button>
-            <div className="aspect-video bg-black rounded-xl overflow-hidden flex items-center justify-center relative mt-4 border border-white/5">
-              <div className="text-center p-8">
-                <div className="w-16 h-16 rounded-full bg-white/10 mx-auto flex items-center justify-center mb-4 text-[#D8F83A]">
+            <div className="aspect-video bg-black rounded-xl overflow-hidden relative mt-4 border border-white/5">
+              <img src="./photos/teaser.jpg" alt="" className="absolute inset-0 w-full h-full object-cover opacity-70" />
+              <div className="relative text-center p-8 h-full flex flex-col items-center justify-center">
+                <div className="w-16 h-16 rounded-full bg-white/15 mx-auto flex items-center justify-center mb-4 text-[#D8F83A]">
                   <Play className="w-8 h-8 fill-current ml-1" />
                 </div>
-                <h4 className="font-unbounded text-lg text-white font-bold mb-2">Видео-манифест курса mads</h4>
-                <p className="text-xs text-[#A1A1AA] max-w-md mx-auto">
-                  15 лет опыта, реальные кейсы от PepsiCo, SPLAT, BBDO и Utair в одном видео.
+                <h4 className="font-unbounded text-lg text-white font-bold mb-2">Видео в макете нет</h4>
+                <p className="text-xs text-[#E4E4E7] max-w-md mx-auto">
+                  Здесь был бы тизер. Это учебный лендинг — ролик не подключён.
                 </p>
               </div>
             </div>

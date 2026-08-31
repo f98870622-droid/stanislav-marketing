@@ -43,12 +43,14 @@ export const PriceSection: React.FC<PriceSectionProps> = ({ onEnrollClick }) => 
               </p>
 
               <div className="mb-6 p-5 rounded-2xl bg-[#1C1C20] border border-white/5">
-                <div className="font-unbounded text-3xl font-black text-white">
-                  8 769 ₽ <span className="text-xs font-mono font-normal text-[#A1A1AA]">/ мес</span>
-                </div>
-                <div className="text-xs text-[#71717A] mt-1 font-mono">
-                  Рассрочка на 10 мес. Единый платёж: 87 690 ₽ (было 112 846 ₽)
-                </div>
+                <p className="font-unbounded text-[1.75rem] sm:text-3xl font-black text-white leading-none tracking-tight whitespace-nowrap">
+                  {'8\u00A0769\u00A0₽'}
+                  <span className="ml-2 text-lg font-semibold text-[#C4C4CC]">/мес</span>
+                </p>
+                <p className="text-sm text-[#A1A1AA] mt-3 leading-snug">
+                  10 платежей · полностью 87&nbsp;690&nbsp;₽{' '}
+                  <span className="line-through text-[#8A8A93]">112&nbsp;846&nbsp;₽</span>
+                </p>
               </div>
             </div>
 
@@ -76,12 +78,14 @@ export const PriceSection: React.FC<PriceSectionProps> = ({ onEnrollClick }) => 
               </p>
 
               <div className="mb-6 p-5 rounded-2xl bg-[#222226] border border-white/5">
-                <div className="font-unbounded text-3xl font-black text-white">
-                  17 259 ₽ <span className="text-xs font-mono font-normal text-[#A1A1AA]">/ мес</span>
-                </div>
-                <div className="text-xs text-[#71717A] mt-1 font-mono">
-                  Рассрочка на 10 мес. Единый платёж: 172 590 ₽ (было 193 723 ₽)
-                </div>
+                <p className="font-unbounded text-[1.75rem] sm:text-3xl font-black text-white leading-none tracking-tight whitespace-nowrap">
+                  {'17\u00A0259\u00A0₽'}
+                  <span className="ml-2 text-lg font-semibold text-[#C4C4CC]">/мес</span>
+                </p>
+                <p className="text-sm text-[#A1A1AA] mt-3 leading-snug">
+                  10 платежей · полностью 172&nbsp;590&nbsp;₽{' '}
+                  <span className="line-through text-[#8A8A93]">193&nbsp;723&nbsp;₽</span>
+                </p>
               </div>
             </div>
 

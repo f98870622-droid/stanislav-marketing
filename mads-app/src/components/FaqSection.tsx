@@ -17,15 +17,15 @@ export const FaqSection: React.FC = () => {
       <div className="max-w-4xl mx-auto">
         <div className="flex items-center gap-3 text-xs font-mono text-[#D8F83A] uppercase tracking-widest mb-6">
           <span className="w-2 h-2 rounded-full bg-[#D8F83A]"></span>
-          <span>17 / Вопросы и ответы</span>
+          <span>07 / Вопросы и ответы</span>
         </div>
 
         <div className="mb-16">
           <h2 className="font-unbounded text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#F6F6F5]">
-            Часто задаваемые вопросы
+            Частые вопросы
           </h2>
           <p className="mt-4 text-base sm:text-lg text-[#A1A1AA]">
-            Всё, что важно знать о расписании, защите стратегии, оплате и формате работы.
+            Формат, свой проект, оплата. Коротко.
           </p>
         </div>
 
@@ -45,11 +45,15 @@ export const FaqSection: React.FC = () => {
                     {item.question}
                   </span>
                   <div
-                    className={`w-8 h-8 rounded-full bg-[#222226] text-white flex items-center justify-center shrink-0 transition-transform duration-300 ${
-                      isOpen ? 'rotate-180 bg-[#D8F83A] text-black' : ''
+                    className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition-transform duration-300 ${
+                      isOpen ? 'rotate-180 bg-[#D8F83A]' : 'bg-[#222226]'
                     }`}
                   >
-                    <ChevronDown className="w-4 h-4" />
+                    <ChevronDown
+                      className="h-4 w-4"
+                      strokeWidth={2.5}
+                      color={isOpen ? '#111111' : '#ffffff'}
+                    />
                   </div>
                 </button>
 

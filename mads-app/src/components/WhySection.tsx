@@ -17,10 +17,10 @@ export const WhySection: React.FC = () => {
         {/* Mashed heading as requested: почемуmads */}
         <div className="mb-16">
           <h2 className="font-unbounded text-3xl sm:text-5xl md:text-6xl font-black tracking-tighter text-[#F6F6F5] lowercase">
-            почемуmads
+            почемуsrez
           </h2>
           <p className="mt-4 text-base sm:text-xl text-[#A1A1AA] max-w-2xl">
-            Главная школа креативных и маркетинговых коммуникаций с 2013 года.
+            Школа маркетинговых коммуникаций. Учебный лендинг для портфолио.
           </p>
         </div>
 
@@ -42,7 +42,7 @@ export const WhySection: React.FC = () => {
 
               <div className="mt-8 pt-4 border-t border-white/5 flex items-center justify-between text-xs font-mono text-[#52525B]">
                 <span>0{idx + 1}</span>
-                <span>MADS STANDARD</span>
+                <span>SREZ STANDARD</span>
               </div>
             </div>
           ))}
@@ -55,11 +55,11 @@ export const WhySection: React.FC = () => {
               ГДЕ РАБОТАЮТ НАШИ ВЫПУСКНИКИ
             </div>
             <div className="font-unbounded text-lg sm:text-xl font-bold text-white">
-              Instinct · BBDO · Leo Burnett · Saatchi & Saatchi · Slava · Possible · Friends · R/GA London
+              Nordwell · Brick & Pitch · MediaNorth · Houseform · Paid Grid
             </div>
           </div>
           <div className="px-5 py-2.5 rounded-full bg-[#24242A] text-xs font-mono text-[#1DBF98] whitespace-nowrap">
-            200+ ТОПОВЫХ АГЕНТСТВ
+            ПАРТНЁРЫ ШКОЛЫ
           </div>
         </div>
       </div>

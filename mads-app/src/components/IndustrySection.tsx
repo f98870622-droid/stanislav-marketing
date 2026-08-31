@@ -1,6 +1,7 @@
 import React from 'react';
 import { INDUSTRY_QUOTES } from '../data';
 import { Quote } from 'lucide-react';
+import { PersonPhoto } from './PersonPhoto';
 
 export const IndustrySection: React.FC = () => {
   return (
@@ -36,8 +37,13 @@ export const IndustrySection: React.FC = () => {
                 </p>
               </div>
 
-              <div className="pt-6 border-t border-white/5 flex items-center justify-between">
-                <div>
+              <div className="pt-6 border-t border-white/5 flex items-center gap-3">
+                <PersonPhoto
+                  src={item.photo}
+                  alt={item.author}
+                  className="w-12 h-12 rounded-full shrink-0"
+                />
+                <div className="min-w-0">
                   <h4 className="font-unbounded text-base font-bold text-white">
                     {item.author}
                   </h4>
@@ -45,9 +51,6 @@ export const IndustrySection: React.FC = () => {
                     {item.role} · <strong className="text-white font-medium">{item.company}</strong>
                   </p>
                 </div>
-                <span className="text-xs font-mono text-[#71717A]">
-                  INDUSTRY LEADER
-                </span>
               </div>
             </div>
           ))}

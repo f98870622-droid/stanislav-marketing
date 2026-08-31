@@ -5,6 +5,44 @@ interface FormatsSectionProps {
   onEnrollClick: (tariffName?: string) => void;
 }
 
+function InstallmentPrice({
+  monthly,
+  monthlyWas,
+  total,
+  totalWas,
+}: {
+  monthly: string;
+  monthlyWas: string;
+  total: string;
+  totalWas: string;
+}) {
+  return (
+    <div className="p-5 sm:p-6 rounded-2xl bg-[#1F1F24] border border-white/5 mb-8">
+      <p className="text-sm text-[#A1A1AA] mb-3">Не надо доставать всю сумму сразу · 10 платежей</p>
+
+      <div className="flex flex-wrap items-end justify-between gap-x-4 gap-y-2">
+        <p className="font-unbounded text-[1.75rem] sm:text-[2.15rem] font-black text-white leading-none tracking-tight whitespace-nowrap">
+          {monthly}
+          <span className="ml-2 align-baseline text-lg sm:text-xl font-semibold text-[#C4C4CC]">
+            /мес
+          </span>
+        </p>
+        <p className="text-base sm:text-lg text-[#8A8A93] line-through whitespace-nowrap leading-none pb-0.5">
+          {monthlyWas}
+        </p>
+      </div>
+
+      <div className="mt-4 pt-4 border-t border-white/10 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+        <span className="text-sm sm:text-base text-[#C4C4CC]">Полная стоимость</span>
+        <p className="text-base sm:text-lg whitespace-nowrap leading-snug">
+          <span className="font-semibold text-white">{total}</span>
+          <span className="ml-2.5 text-[#8A8A93] line-through">{totalWas}</span>
+        </p>
+      </div>
+    </div>
+  );
+}
+
 export const FormatsSection: React.FC<FormatsSectionProps> = ({ onEnrollClick }) => {
   return (
     <section
@@ -14,20 +52,20 @@ export const FormatsSection: React.FC<FormatsSectionProps> = ({ onEnrollClick })
       <div className="max-w-7xl mx-auto">
         <div className="flex items-center gap-3 text-xs font-mono text-[#D8F83A] uppercase tracking-widest mb-6">
           <span className="w-2 h-2 rounded-full bg-[#D8F83A]"></span>
-          <span>04 / Форматы обучения</span>
+          <span>03 / Форматы обучения</span>
         </div>
 
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
             <h2 className="font-unbounded text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#F6F6F5]">
-              Два формата под ваши цели
+              Два формата: с куратором или самостоятельно
             </h2>
             <p className="mt-4 text-base sm:text-lg text-[#A1A1AA] max-w-xl">
-              Выберите интенсивную работу с кураторами в живом потоке или гибкое самостоятельное обучение.
+              Живой поток — если домашку сами не дотаскиваете. Записи — если дисциплина уже есть, нужен каркас.
             </p>
           </div>
           <div className="px-4 py-2 rounded-full bg-[#1C1C20] border border-white/10 text-xs font-mono text-[#D8F83A] self-start md:self-auto">
-            Беспроцентная рассрочка до 12 месяцев
+            Беспроцентная рассрочка, 10 платежей
           </div>
         </div>
 
@@ -38,60 +76,48 @@ export const FormatsSection: React.FC<FormatsSectionProps> = ({ onEnrollClick })
             {/* Badge */}
             <div className="absolute -top-4 right-8 px-4 py-1.5 rounded-full bg-[#D8F83A] text-black font-unbounded text-xs font-bold tracking-wider uppercase flex items-center gap-1.5 shadow-lg">
               <Flame className="w-3.5 h-3.5 fill-current" />
-              <span>Осталось 18 мест</span>
+              <span>Живой поток · мест мало</span>
             </div>
 
             <div>
               <div className="text-xs font-mono text-[#D8F83A] uppercase tracking-widest mb-3">
                 ФЛАГМАНСКИЙ ПОТОК
               </div>
-              <h3 className="font-unbounded text-2xl sm:text-3xl font-bold text-white mb-4">
-                Полноценный онлайн-курс
+              <h3 className="font-unbounded text-2xl sm:text-[1.7rem] lg:text-3xl font-bold text-white mb-4 text-balance">
+                Полноценный онлайн{'\u2011'}курс
               </h3>
-              <p className="text-sm text-[#A1A1AA] mb-8 leading-relaxed">
-                Максимальное погружение: живые лекции, работа в мини-группе, еженедельная проверка домашних заданий кураторами, карьерный трек и финальная защита.
+              <p className="text-base text-[#C4C4CC] mb-8 leading-relaxed">
+                Вас будут дёргать. Домашку смотрят. На защите не получится сказать «я не успел». Для тех, кому нужен человек с той стороны экрана.
               </p>
 
-              {/* Price block */}
-              <div className="p-6 rounded-2xl bg-[#1F1F24] border border-white/5 mb-8">
-                <div className="flex items-baseline gap-3">
-                  <span className="font-unbounded text-3xl sm:text-4xl font-black text-white">
-                    17 259 ₽
-                  </span>
-                  <span className="text-xs font-mono text-[#A1A1AA]">/ месяц</span>
-                  <span className="text-xs font-mono line-through text-[#71717A] ml-auto">
-                    19 372 ₽/мес
-                  </span>
-                </div>
-                <div className="mt-3 flex items-center justify-between text-xs text-[#A1A1AA] border-t border-white/10 pt-3">
-                  <span>Полная стоимость:</span>
-                  <span className="font-mono font-semibold text-white">
-                    172 590 ₽ <span className="line-through text-[#71717A] text-[11px]">193 723 ₽</span>
-                  </span>
-                </div>
-              </div>
+              <InstallmentPrice
+                monthly={'17\u00A0259\u00A0₽'}
+                monthlyWas={'19\u00A0372\u00A0₽'}
+                total={'172\u00A0590\u00A0₽'}
+                totalWas={'193\u00A0723\u00A0₽'}
+              />
 
               {/* Features */}
-              <ul className="space-y-3.5 text-sm text-[#D4D4D8] mb-10">
+              <ul className="space-y-3.5 text-base text-[#D4D4D8] mb-10">
                 <li className="flex items-start gap-3">
                   <Check className="w-4 h-4 text-[#D8F83A] shrink-0 mt-1" />
-                  <span>36 практических онлайн-занятий и созвонов</span>
+                  <span>Нельзя тихо отстать: созвоны и разбор работ в календаре</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="w-4 h-4 text-[#D8F83A] shrink-0 mt-1" />
-                  <span>Работа в мини-группе над брифом (учебным или своим)</span>
+                  <span>Группа 4–5 человек — прятаться за «командой» не выйдет</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="w-4 h-4 text-[#D8F83A] shrink-0 mt-1" />
-                  <span>Персональный разбор ДЗ и обратная связь от кураторов</span>
+                  <span>Куратор пишет, где слайд врёт, а не «в целом ок»</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="w-4 h-4 text-[#D8F83A] shrink-0 mt-1" />
-                  <span>Индивидуальная карьерная консультация с HR</span>
+                  <span>HR смотрит резюме как наниматель, не как друг</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="w-4 h-4 text-[#D8F83A] shrink-0 mt-1" />
-                  <span>Защита стратегии перед жюри и рассылка портфолио в агентства</span>
+                  <span>Защита вслух. После этого планёрка в офисе уже не страшная</span>
                 </li>
               </ul>
             </div>
@@ -114,50 +140,38 @@ export const FormatsSection: React.FC<FormatsSectionProps> = ({ onEnrollClick })
               <h3 className="font-unbounded text-2xl sm:text-3xl font-bold text-white mb-4">
                 Самостоятельное обучение
               </h3>
-              <p className="text-sm text-[#A1A1AA] mb-8 leading-relaxed">
-                Доступ ко всем видеозаписям лекций, материалам и эталонным разборам домашних заданий для изучения в комфортном для вас ритме.
+              <p className="text-base text-[#C4C4CC] mb-8 leading-relaxed">
+                Если вы и так смотрите лекции по ночам — не переплачивайте за созвоны. Каркас, записи, эталоны. Дисциплина на вас.
               </p>
 
-              {/* Price block */}
-              <div className="p-6 rounded-2xl bg-[#1B1B1F] border border-white/5 mb-8">
-                <div className="flex items-baseline gap-3">
-                  <span className="font-unbounded text-3xl sm:text-4xl font-black text-white">
-                    8 769 ₽
-                  </span>
-                  <span className="text-xs font-mono text-[#A1A1AA]">/ месяц</span>
-                  <span className="text-xs font-mono line-through text-[#71717A] ml-auto">
-                    11 284 ₽/мес
-                  </span>
-                </div>
-                <div className="mt-3 flex items-center justify-between text-xs text-[#A1A1AA] border-t border-white/10 pt-3">
-                  <span>Полная стоимость:</span>
-                  <span className="font-mono font-semibold text-white">
-                    87 690 ₽ <span className="line-through text-[#71717A] text-[11px]">112 846 ₽</span>
-                  </span>
-                </div>
-              </div>
+              <InstallmentPrice
+                monthly={'8\u00A0769\u00A0₽'}
+                monthlyWas={'11\u00A0284\u00A0₽'}
+                total={'87\u00A0690\u00A0₽'}
+                totalWas={'112\u00A0846\u00A0₽'}
+              />
 
               {/* Features */}
-              <ul className="space-y-3.5 text-sm text-[#D4D4D8] mb-10">
+              <ul className="space-y-3.5 text-base text-[#D4D4D8] mb-10">
                 <li className="flex items-start gap-3">
                   <Check className="w-4 h-4 text-[#1DBF98] shrink-0 mt-1" />
-                  <span>Записи всех 36 лекций и мастер-классов</span>
+                  <span>36 лекций: смотрите, когда дети спят — каркас тот же</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="w-4 h-4 text-[#1DBF98] shrink-0 mt-1" />
-                  <span>Полный комплект фреймворков и шаблонов документов</span>
+                  <span>Шаблоны, которые открываете на планёрке, а не «для галочки»</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="w-4 h-4 text-[#1DBF98] shrink-0 mt-1" />
-                  <span>Самопроверка по эталонным видеоразборам экспертов</span>
+                  <span>Эталон разбора: сравните свою работу с тем, как режет эксперт</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Check className="w-4 h-4 text-[#1DBF98] shrink-0 mt-1" />
-                  <span>Доступ к материалам на 12 месяцев</span>
+                  <span>Год доступа — успеете пересмотреть, когда задача всплывёт на работе</span>
                 </li>
                 <li className="flex items-start gap-3 opacity-50">
                   <span className="w-4 h-4 text-center shrink-0 mt-0.5">—</span>
-                  <span className="line-through">Без кураторской проверки и живой защиты</span>
+                  <span className="line-through">Куратор не смотрит ДЗ и защиты вслух нет</span>
                 </li>
               </ul>
             </div>
@@ -166,7 +180,7 @@ export const FormatsSection: React.FC<FormatsSectionProps> = ({ onEnrollClick })
               onClick={() => onEnrollClick('Самостоятельное обучение')}
               className="btn-magnetic w-full py-4 rounded-full bg-white/10 text-white font-unbounded text-xs sm:text-sm font-bold tracking-wider uppercase hover:bg-white/20 transition-colors flex items-center justify-center gap-2"
             >
-              <span>Выбрать тариф</span>
+              <span>Взять записи</span>
               <ArrowRight className="w-4 h-4" />
             </button>
           </div>

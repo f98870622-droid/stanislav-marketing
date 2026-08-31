@@ -23,6 +23,16 @@ export interface Review {
   role: string;
   text: string;
   rating: number;
+  photo: string;
+  when?: string;
+}
+
+export interface IndustryQuote {
+  author: string;
+  role: string;
+  company: string;
+  quote: string;
+  photo: string;
 }
 
 export interface IndustryQuote {

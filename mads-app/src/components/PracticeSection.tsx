@@ -1,114 +1,115 @@
 import React from 'react';
-import { Users, UserCheck, Briefcase, CheckCircle2 } from 'lucide-react';
+import { Users, Briefcase, CheckCircle2 } from 'lucide-react';
 
 export const PracticeSection: React.FC = () => {
   return (
     <section
       id="practice"
-      className="relative bg-[#0E0E10] text-[#F6F6F5] py-24 sm:py-32 px-6 sm:px-10 border-t border-white/5"
+      className="relative bg-[#F6F6F5] text-[#121214] py-24 sm:py-32 px-6 sm:px-10 border-t border-black/5"
     >
-      <div className="max-w-7xl mx-auto">
-        <div className="flex items-center gap-3 text-xs font-mono text-[#D8F83A] uppercase tracking-widest mb-6">
+      <div className="absolute inset-0 pointer-events-none opacity-[0.03] bg-[radial-gradient(#121214_1px,transparent_1px)] [background-size:24px_24px]" />
+      <div className="relative max-w-7xl mx-auto">
+        <div className="flex items-center gap-3 text-xs font-mono text-[#3F3F46] uppercase tracking-widest mb-6">
           <span className="w-2 h-2 rounded-full bg-[#D8F83A]"></span>
           <span>02 / Практика и трекинг</span>
         </div>
 
         <div className="max-w-3xl mb-16">
-          <h2 className="font-unbounded text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#F6F6F5]">
-            Как устроена работа над проектом
+          <h2 className="font-unbounded text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#121214]">
+            Практика: один кейс за четыре месяца
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-[#A1A1AA]">
-            Мини-группы, распределение ролей, живые презентации и детальный еженедельный фидбек от кураторов.
+          <p className="mt-4 text-base sm:text-lg text-[#52525B]">
+            Каждую неделю разбор работы. В конце — документ и защита, не сертификат PDF.
           </p>
         </div>
 
         {/* Two contrasting cards: Новички vs Опытные */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Novices Card */}
-          <div className="p-8 sm:p-10 rounded-3xl bg-[#151518] border border-white/10 hover:border-white/20 transition-all duration-300 flex flex-col justify-between">
-            <div>
+          <div className="rounded-3xl bg-white border border-black/10 hover:border-black/20 transition-all duration-300 flex flex-col overflow-hidden shadow-sm">
+            <img
+              src="./photos/team.jpg"
+              alt="Работа в мини-группе"
+              className="w-full h-44 sm:h-52 object-cover"
+              loading="lazy"
+            />
+            <div className="p-8 sm:p-10 flex flex-col flex-1">
               <div className="flex items-center justify-between mb-8">
-                <span className="px-3.5 py-1.5 rounded-full bg-[#27272A] text-xs font-mono text-[#D4D4D8]">
+                <span className="px-3.5 py-1.5 rounded-full bg-[#E8E8E6] text-xs font-mono text-[#3F3F46]">
                   ОПЫТ ДО 3 ЛЕТ
                 </span>
                 <Users className="w-6 h-6 text-[#1DBF98]" />
               </div>
-
-              <h3 className="font-unbounded text-2xl font-bold text-white mb-4">
-                Новичкам и джуниорам
+              <h3 className="font-unbounded text-2xl font-bold text-[#121214] mb-4">
+                Нет своего бренда
               </h3>
-              
-              <p className="text-sm sm:text-base text-[#A1A1AA] leading-relaxed mb-6">
-                Вы работаете над учебным проектом в мини-группе из 4–5 человек, примеряя на себя ключевые роли (исследователь, стратег, медиапланер, креативный директор).
+              <p className="text-sm sm:text-base text-[#52525B] leading-relaxed mb-6">
+                Учебный бриф с цифрами и командный кейс. На интервью можно рассказать работу, а не список модулей.
               </p>
-
-              <ul className="space-y-3.5 text-sm text-[#D4D4D8]">
+              <ul className="space-y-3.5 text-sm text-[#3F3F46] mb-8">
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="w-4 h-4 text-[#1DBF98] shrink-0 mt-1" />
-                  <span>Реалистичный бриф от известного бренда с полным набором вводных</span>
+                  <span>Бриф с цифрами, не «придумайте что-нибудь креативное»</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="w-4 h-4 text-[#1DBF98] shrink-0 mt-1" />
-                  <span>Распределение зон ответственности и командный штурм</span>
+                  <span>Понятно, кто за исследование, кто за медиа, кто за презентацию</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="w-4 h-4 text-[#1DBF98] shrink-0 mt-1" />
-                  <span>Регулярные созвоны с куратором для разбора ошибок</span>
+                  <span>Разбор ошибок каждую неделю — не «молодец» в конце модуля</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="w-4 h-4 text-[#1DBF98] shrink-0 mt-1" />
-                  <span>Готовый командный кейс международного уровня в портфолио</span>
+                  <span>В портфолио появляется работа, которую можно рассказать за 5 минут</span>
                 </li>
               </ul>
-            </div>
-
-            <div className="mt-8 pt-6 border-t border-white/5 text-xs text-[#71717A] font-mono">
-              ФОРМАТ: МИНИ-ГРУППЫ + РОЛИ
+              <div className="mt-auto pt-6 border-t border-black/10 text-xs text-[#71717A] font-mono">
+                ФОРМАТ: МИНИ-ГРУППЫ + РОЛИ
+              </div>
             </div>
           </div>
 
-          {/* Experienced Card */}
-          <div className="p-8 sm:p-10 rounded-3xl bg-[#18181C] border border-[#D8F83A]/30 hover:border-[#D8F83A]/60 transition-all duration-300 flex flex-col justify-between relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-[#D8F83A]/5 rounded-full blur-2xl pointer-events-none"></div>
-
-            <div>
+          <div className="rounded-3xl bg-white border-2 border-[#121214] hover:border-[#121214] transition-all duration-300 flex flex-col overflow-hidden shadow-sm">
+            <img
+              src="./photos/office.jpg"
+              alt="Работа над своим проектом"
+              className="w-full h-44 sm:h-52 object-cover"
+              loading="lazy"
+            />
+            <div className="p-8 sm:p-10 flex flex-col flex-1">
               <div className="flex items-center justify-between mb-8">
-                <span className="px-3.5 py-1.5 rounded-full bg-[#2A2A2E] text-xs font-mono text-[#D8F83A]">
+                <span className="px-3.5 py-1.5 rounded-full bg-[#121214] text-xs font-mono text-[#D8F83A]">
                   ОПЫТ 3+ ГОДА
                 </span>
                 <Briefcase className="w-6 h-6 text-[#D8F83A]" />
               </div>
-
-              <h3 className="font-unbounded text-2xl font-bold text-white mb-4">
-                Опытным специалистам и бизнесу
+              <h3 className="font-unbounded text-2xl font-bold text-[#121214] mb-4">
+                Есть свой продукт
               </h3>
-              
-              <p className="text-sm sm:text-base text-[#A1A1AA] leading-relaxed mb-6">
-                Возможность решать задачу своего реального продукта или компании под надзором топовых директоров по маркетингу.
+              <p className="text-sm sm:text-base text-[#52525B] leading-relaxed mb-6">
+                Четыре месяца ведёте свою задачу под ревью. Нет цифр за две недели — переходите на учебный бриф.
               </p>
-
-              <ul className="space-y-3.5 text-sm text-[#D4D4D8]">
+              <ul className="space-y-3.5 text-sm text-[#3F3F46] mb-8">
                 <li className="flex items-start gap-3">
-                  <CheckCircle2 className="w-4 h-4 text-[#D8F83A] shrink-0 mt-1" />
-                  <span>Работа над стратегией вашего бизнеса на протяжении всех 4 месяцев</span>
+                  <CheckCircle2 className="w-4 h-4 text-[#121214] shrink-0 mt-1" />
+                  <span>Стратегия вашего бизнеса, не абстрактный «рынок снеков»</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle2 className="w-4 h-4 text-[#D8F83A] shrink-0 mt-1" />
+                  <CheckCircle2 className="w-4 h-4 text-[#121214] shrink-0 mt-1" />
                   <span>Условие: предоставление вводных данных за первые 2 недели после старта</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle2 className="w-4 h-4 text-[#D8F83A] shrink-0 mt-1" />
-                  <span>Если данные не готовы — бесшовный переход на сильный учебный бриф</span>
+                  <CheckCircle2 className="w-4 h-4 text-[#121214] shrink-0 mt-1" />
+                  <span>Нет цифр за две недели — берёте учебный бриф, время не сгорает</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle2 className="w-4 h-4 text-[#D8F83A] shrink-0 mt-1" />
-                  <span>Индивидуальные стратегические ревью и валидация решений</span>
+                  <CheckCircle2 className="w-4 h-4 text-[#121214] shrink-0 mt-1" />
+                  <span>Ревью решений до защиты, а не сюрприз в день питча</span>
                 </li>
               </ul>
-            </div>
-
-            <div className="mt-8 pt-6 border-t border-white/10 text-xs text-[#D8F83A] font-mono">
-              ФОРМАТ: СВОЙ ПРОЕКТ ИЛИ УЧЕБНЫЙ БРИФ
+              <div className="mt-auto pt-6 border-t border-black/10 text-xs text-[#3F3F46] font-mono">
+                ФОРМАТ: СВОЙ ПРОЕКТ ИЛИ УЧЕБНЫЙ БРИФ
+              </div>
             </div>
           </div>
         </div>

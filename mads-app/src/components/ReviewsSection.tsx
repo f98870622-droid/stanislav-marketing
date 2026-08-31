@@ -1,64 +1,68 @@
 import React from 'react';
 import { REVIEWS_DATA } from '../data';
-import { Star, Quote } from 'lucide-react';
+import { PersonPhoto } from './PersonPhoto';
 
 export const ReviewsSection: React.FC = () => {
+  const messages = REVIEWS_DATA.slice(0, 2);
+
   return (
     <section
       id="reviews"
       className="relative bg-[#0E0E10] text-[#F6F6F5] py-24 sm:py-32 px-6 sm:px-10 border-t border-white/5"
     >
-      <div className="max-w-7xl mx-auto">
-        <div className="flex items-center gap-3 text-xs font-mono text-[#D8F83A] uppercase tracking-widest mb-6">
-          <span className="w-2 h-2 rounded-full bg-[#D8F83A]"></span>
-          <span>14 / Отзывы выпускников</span>
-        </div>
-
-        <div className="max-w-3xl mb-16">
-          <h2 className="font-unbounded text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#F6F6F5]">
-            Что говорят студенты
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 lg:items-start">
+        <div className="lg:col-span-5">
+          <div className="flex items-center gap-3 text-xs font-mono text-[#D8F83A] uppercase tracking-widest mb-6">
+            <span className="w-2 h-2 rounded-full bg-[#D8F83A]"></span>
+            <span>06 / Чат потока</span>
+          </div>
+          <h2 className="font-unbounded text-2xl sm:text-4xl font-bold tracking-tight text-[#F6F6F5] text-balance">
+            После защиты пишут сюда, не в форму «отзыв»
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-[#A1A1AA]">
-            Реальные истории специалистов, внедривших методологию курса в крупнейших компаниях.
+          <p className="mt-4 text-base text-[#A1A1AA] leading-relaxed max-w-md">
+            Кураторский чат, ноябрьский поток. Так обычно и выглядит: коротко, без галочек «рекомендую курс».
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {REVIEWS_DATA.map((review, idx) => (
-            <div
-              key={idx}
-              className="p-8 sm:p-10 rounded-3xl bg-[#151518] border border-white/5 hover:border-white/15 transition-all flex flex-col justify-between"
-            >
-              <div>
-                <div className="flex items-center justify-between mb-6">
-                  <div className="flex gap-1">
-                    {[...Array(review.rating)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-[#D8F83A] text-[#D8F83A]" />
-                    ))}
-                  </div>
-                  <Quote className="w-6 h-6 text-[#71717A]/40" />
-                </div>
-
-                <p className="text-sm sm:text-base text-[#D4D4D8] leading-relaxed mb-8">
-                  «{review.text}»
-                </p>
+        <div className="lg:col-span-7 min-w-0">
+          <div className="rounded-[1.75rem] border border-white/10 bg-[#161618] overflow-hidden shadow-[0_24px_80px_rgba(0,0,0,0.45)]">
+            <div className="flex items-center gap-3 px-4 sm:px-5 py-3.5 border-b border-white/10 bg-[#1C1C20]">
+              <div className="w-9 h-9 rounded-full bg-[#D8F83A] text-black flex items-center justify-center font-unbounded text-xs font-bold shrink-0">
+                s
               </div>
-
-              <div className="pt-6 border-t border-white/5 flex items-center justify-between">
-                <div>
-                  <h4 className="font-unbounded text-base font-bold text-white">
-                    {review.name}
-                  </h4>
-                  <p className="text-xs text-[#A1A1AA] mt-0.5">
-                    {review.role} · <strong className="text-white font-medium">{review.company}</strong>
-                  </p>
-                </div>
-                <span className="text-[11px] font-mono text-[#71717A]">
-                  GRADUATE
-                </span>
+              <div className="min-w-0">
+                <p className="text-sm font-semibold text-white truncate">Поток · ноябрь 2026</p>
+                <p className="text-[11px] text-[#71717A]">24 участника · кураторы в чате</p>
               </div>
             </div>
-          ))}
+
+            <div className="px-4 sm:px-5 py-5 space-y-6">
+              {messages.map((review) => (
+                <article key={review.name} className="flex items-start gap-2.5">
+                  <PersonPhoto
+                    src={review.photo}
+                    alt=""
+                    fit="cover"
+                    className="w-9 h-9 rounded-full shrink-0 mt-0.5"
+                  />
+                  <div className="min-w-0 flex-1">
+                    <div className="flex flex-wrap items-baseline gap-x-2 gap-y-0 mb-1">
+                      <span className="text-[13px] font-semibold text-white">{review.name}</span>
+                      <span className="text-[11px] text-[#71717A]">{review.when}</span>
+                    </div>
+                    <div className="rounded-2xl rounded-tl-md bg-[#222226] px-3.5 py-2.5 max-w-full">
+                      <p className="text-[15px] leading-relaxed text-[#E4E4E7] font-normal">
+                        {review.text}
+                      </p>
+                    </div>
+                    <p className="mt-1.5 text-[11px] text-[#52525B]">
+                      {review.role}, {review.company}
+                    </p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>
