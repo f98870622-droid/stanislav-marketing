@@ -6,6 +6,9 @@ build/
 .env
 .env.local
 .vite/
-lead-server/config.php
-lead-server/data/*.jsonl
-lead-server/data/rate-*.txt
+lead-server/
+assets/composite_iphone.py
+assets/iphone17-*.png
+assets/mads-iphone-screen.png
+mads-app/src/*.full-backup.tsx
+mads-app/src/rollback-honest/
