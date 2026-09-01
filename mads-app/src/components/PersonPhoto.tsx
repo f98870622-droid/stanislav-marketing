@@ -11,7 +11,7 @@ export const PersonPhoto: React.FC<PersonPhotoProps> = ({
   src,
   alt,
   className = '',
-  fit = 'contain',
+  fit = 'cover',
 }) => (
   <span className={`relative isolate block overflow-hidden bg-[#1C1C20] ${className}`}>
     <img
@@ -20,9 +20,9 @@ export const PersonPhoto: React.FC<PersonPhotoProps> = ({
       loading="lazy"
       decoding="async"
       className={
-        fit === 'cover'
-          ? 'absolute inset-0 h-full w-full object-cover object-[center_18%]'
-          : 'absolute top-1/2 left-1/2 max-h-[92%] max-w-[92%] -translate-x-1/2 -translate-y-1/2 object-contain object-center'
+        fit === 'contain'
+          ? 'absolute inset-0 h-full w-full object-contain object-center p-[4%]'
+          : 'absolute inset-0 h-full w-full object-cover object-[center_22%]'
       }
     />
   </span>
