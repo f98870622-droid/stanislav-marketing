@@ -3148,6 +3148,18 @@ body.menu-open .site-footer {
   align-items: start;
 }
 
+.contact__layout--direct {
+  grid-template-columns: 1fr;
+}
+
+.contact__layout--direct .section-heading {
+  max-width: 64rem;
+}
+
+.contact__layout--direct .contact__text {
+  max-width: 62ch;
+}
+
 .contact__text {
   max-width: 400px;
   color: var(--dim);
@@ -3228,6 +3240,7 @@ body.menu-open .site-footer {
 }
 
 .lead-form {
+  position: relative;
   display: grid;
   gap: 20px;
   width: 100%;
@@ -3239,6 +3252,14 @@ body.menu-open .site-footer {
     linear-gradient(160deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01)),
     rgba(10, 10, 10, 0.72);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.lead-form__hp {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
 }
 
 .lead-form__field {

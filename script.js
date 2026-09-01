@@ -638,44 +638,7 @@ const initMobileFormUx = () => {
 
 initMobileFormUx();
 
-const sendLeadToApi = async (payload, leadApi) => {
-  const response = await fetch(leadApi, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json",
-    },
-    body: JSON.stringify(payload),
-  });
-
-  if (!response.ok) {
-    throw new Error("Telegram delivery failed");
-  }
-};
-
-const sendLeadToEmail = async (payload, summary, endpointEmail) => {
-  const response = await fetch(`https://formsubmit.co/ajax/${endpointEmail}`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json",
-    },
-    body: JSON.stringify({
-      _subject: "Новая заявка — Станислав",
-      _template: "box",
-      name: payload.name || "—",
-      contact: payload.contact,
-      message: summary,
-      summary,
-    }),
-  });
-
-  if (!response.ok) {
-    throw new Error("Email delivery failed");
-  }
-};
-
-form?.addEventListener("submit", async (event) => {
+form?.addEventListener("submit", (event) => {
   event.preventDefault();
   if (isSubmitting) return;
 
@@ -689,68 +652,8 @@ form?.addEventListener("submit", async (event) => {
     return;
   }
 
-  const { name, contact, social } = validated;
-  const payload = {
-    name,
-    contact: normalizeContact(contact, social),
-    social,
-  };
-  const summary = buildLeadSummary(payload);
-  const leadApi = form.dataset.leadApi?.trim();
-  const endpointEmail = form.dataset.endpointEmail?.trim();
-
-  isSubmitting = true;
-  if (submitBtn instanceof HTMLButtonElement) {
-    submitBtn.setAttribute("aria-busy", "true");
-  }
-
-  let telegramSent = false;
-  let emailSent = false;
-
-  try {
-    if (leadApi) {
-      try {
-        await sendLeadToApi(payload, leadApi);
-        telegramSent = true;
-      } catch {
-        telegramSent = false;
-      }
-    }
-
-    if (endpointEmail && !endpointEmail.includes("xxx")) {
-      try {
-        await sendLeadToEmail(payload, summary, endpointEmail);
-        emailSent = true;
-      } catch {
-        emailSent = false;
-      }
-    }
-
-    if (telegramSent || emailSent) {
-      form.reset();
-      clearFieldErrors();
-      if (consentCheckbox instanceof HTMLInputElement) {
-        consentCheckbox.checked = false;
-      }
-      const telegramRadio = form?.querySelector('input[name="social"][value="telegram"]');
-      if (telegramRadio instanceof HTMLInputElement) {
-        telegramRadio.checked = true;
-      }
-      syncSocialPlaceholder();
-      setFormStatus("Заявка отправлена. Напишу вам в Telegram или VK в течение рабочего дня.");
-      syncSubmitState();
-      return;
-    }
-
-    setFormStatus(
-      "Не удалось отправить заявку. Попробуйте ещё раз или напишите напрямую — ссылки под формой.",
-      "error"
-    );
-  } finally {
-    isSubmitting = false;
-    if (submitBtn instanceof HTMLButtonElement) {
-      submitBtn.removeAttribute("aria-busy");
-    }
-    syncSubmitState();
-  }
+  setFormStatus(
+    "Форма не отправляет данные. Напишите в Telegram или VK — ссылки под кнопкой.",
+    "info"
+  );
 });

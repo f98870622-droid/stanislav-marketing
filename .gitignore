@@ -6,3 +6,6 @@ build/
 .env
 .env.local
 .vite/
+lead-server/config.php
+lead-server/data/*.jsonl
+lead-server/data/rate-*.txt
