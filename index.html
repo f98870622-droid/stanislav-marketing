@@ -551,7 +551,7 @@
       </section>
 
       <section class="contact" id="contact" aria-labelledby="contact-title">
-        <div class="container contact__layout">
+        <div class="container contact__layout contact__layout--direct">
           <div class="contact__intro">
             <header class="section-heading section-heading--compact">
               <p class="section-heading__eyebrow">Следующий шаг</p>
@@ -570,104 +570,6 @@
             </nav>
             <p class="contact__channels-note">Пишите напрямую — сообщение получу лично я.</p>
           </div>
-
-          <form
-            class="lead-form"
-            id="lead-form"
-            action="#"
-            method="post"
-            novalidate
-            data-lead-api=""
-          >
-            <div class="lead-form__field">
-              <label class="lead-form__label" for="lead-name">Имя</label>
-              <div class="lead-form__input-wrap">
-                <input
-                  class="lead-form__input"
-                  type="text"
-                  name="name"
-                  id="lead-name"
-                  placeholder="Иван"
-                  autocomplete="name"
-                  required
-                />
-              </div>
-            </div>
-
-            <div class="lead-form__field">
-              <label class="lead-form__label" for="lead-contact">Telegram или VK</label>
-              <div class="lead-form__social" role="radiogroup" aria-label="Способ связи">
-                <label class="lead-form__social-option">
-                  <input
-                    class="lead-form__social-input"
-                    type="radio"
-                    name="social"
-                    value="telegram"
-                    checked
-                  />
-                  <span>Telegram</span>
-                </label>
-                <label class="lead-form__social-option">
-                  <input
-                    class="lead-form__social-input"
-                    type="radio"
-                    name="social"
-                    value="vk"
-                  />
-                  <span>VK</span>
-                </label>
-              </div>
-              <div class="lead-form__input-wrap">
-                <input
-                  class="lead-form__input"
-                  type="text"
-                  id="lead-contact"
-                  name="contact"
-                  placeholder="username"
-                  required
-                  autocomplete="off"
-                  autocapitalize="off"
-                  autocorrect="off"
-                  spellcheck="false"
-                />
-              </div>
-            </div>
-
-            <label class="lead-form__consent">
-              <input
-                class="lead-form__checkbox"
-                type="checkbox"
-                id="lead-consent"
-                name="consent"
-                required
-              />
-              <span>
-                Нажимая кнопку «Оставить заявку», я даю согласие на обработку
-                персональных данных и принимаю
-                <a href="./privacy-policy.html">Политику конфиденциальности</a>.
-              </span>
-            </label>
-
-            <button class="lead-form__submit" type="submit" id="lead-submit">
-              Оставить заявку
-            </button>
-
-            <p class="lead-form__fallback">
-              Форма-заглушка: данные никуда не отправляются.
-              Напишите мне в
-              <a data-telegram-link href="https://t.me/stanislav5621" target="_blank" rel="noopener noreferrer">Telegram</a>
-              или
-              <a href="https://vk.ru/id1025918815" target="_blank" rel="noopener noreferrer">VK</a>.
-            </p>
-
-            <p
-              class="lead-form__status is-empty"
-              id="lead-form-status"
-              role="status"
-              aria-live="polite"
-              aria-hidden="true"
-            ></p>
-          </form>
         </div>
       </section>
     </main>
