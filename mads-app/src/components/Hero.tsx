@@ -270,9 +270,9 @@ export const Hero: React.FC<HeroProps> = ({ onEnrollClick }) => {
             </button>
             <div className="aspect-video bg-black rounded-xl overflow-hidden relative mt-8 sm:mt-6 border border-white/5">
               <img src="./photos/teaser.jpg" alt="" className="absolute inset-0 w-full h-full object-cover opacity-70" />
-              <div className="relative text-center p-8 h-full flex flex-col items-center justify-center">
-                <div className="w-16 h-16 rounded-full bg-white/15 mx-auto flex items-center justify-center mb-4 text-[#D8F83A]">
-                  <Play className="w-8 h-8 fill-current ml-1" />
+              <div className="relative h-full flex flex-col items-center justify-center p-4 sm:p-8 min-h-0">
+                <div className="size-14 sm:size-16 shrink-0 aspect-square rounded-full bg-white/15 flex items-center justify-center mb-3 sm:mb-4 text-[#D8F83A]">
+                  <Play className="w-7 h-7 sm:w-8 sm:h-8 fill-current ml-0.5 shrink-0" />
                 </div>
                 <h4 className="font-unbounded text-lg text-white font-bold mb-2">Видео в макете нет</h4>
                 <p className="text-xs text-[#E4E4E7] max-w-md mx-auto">
