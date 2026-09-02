@@ -270,12 +270,17 @@ export const Hero: React.FC<HeroProps> = ({ onEnrollClick }) => {
             </button>
             <div className="aspect-video bg-black rounded-xl overflow-hidden relative mt-8 sm:mt-6 border border-white/5">
               <img src="./photos/teaser.jpg" alt="" className="absolute inset-0 w-full h-full object-cover opacity-70" />
-              <div className="relative h-full flex flex-col items-center justify-center p-4 sm:p-8 min-h-0">
-                <div className="size-14 sm:size-16 shrink-0 aspect-square rounded-full bg-white/15 flex items-center justify-center mb-3 sm:mb-4 text-[#D8F83A]">
-                  <Play className="w-7 h-7 sm:w-8 sm:h-8 fill-current ml-0.5 shrink-0" />
-                </div>
-                <h4 className="font-unbounded text-lg text-white font-bold mb-2">Видео в макете нет</h4>
-                <p className="text-xs text-[#E4E4E7] max-w-md mx-auto">
+              <div className="absolute inset-0 flex flex-col items-center justify-end sm:justify-center p-4 sm:p-8 pointer-events-none">
+                <span className="teaser-play absolute left-1/2 top-[42%] -translate-x-1/2 -translate-y-1/2 sm:static sm:translate-x-0 sm:translate-y-0 sm:mb-4">
+                  <svg className="teaser-play__ring" viewBox="0 0 56 56" width="56" height="56" aria-hidden="true">
+                    <circle cx="28" cy="28" r="28" fill="rgba(255,255,255,0.18)" />
+                  </svg>
+                  <Play className="teaser-play__icon" strokeWidth={0} />
+                </span>
+                <h4 className="font-unbounded text-base sm:text-lg text-white font-bold mb-1 sm:mb-2 text-center relative">
+                  Видео в макете нет
+                </h4>
+                <p className="text-xs text-[#E4E4E7] max-w-md mx-auto text-center relative">
                   Здесь был бы тизер. Это учебный лендинг — ролик не подключён.
                 </p>
               </div>
