@@ -90,30 +90,17 @@
   animation-play-state: paused;
 }
 
-/* Teaser play: a true circle (not a squircle) even when the modal is squeezed */
-.teaser-play {
-  position: relative;
+/* Beat Tailwind preflight (svg { max-width:100%; height:auto }) which squashes the disc into an oval */
+svg.teaser-play {
   display: block;
-  width: 56px;
-  height: 56px;
-  flex: none;
-  pointer-events: none;
-}
-.teaser-play__ring {
-  display: block;
-  width: 56px;
-  height: 56px;
-}
-.teaser-play__icon {
-  position: absolute;
-  top: 50%;
-  left: 52%;
-  width: 28px;
-  height: 28px;
-  margin: 0;
-  color: #d8f83a;
-  fill: currentColor;
-  transform: translate(-50%, -50%);
+  flex: 0 0 64px;
+  width: 64px !important;
+  height: 64px !important;
+  min-width: 64px !important;
+  min-height: 64px !important;
+  max-width: 64px !important;
+  max-height: 64px !important;
+  overflow: visible;
 }
 
 /* Safari iOS zooms focused fields if font-size is under 16px */
