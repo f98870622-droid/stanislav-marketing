@@ -91,10 +91,10 @@ export const FormatsSection: React.FC<FormatsSectionProps> = ({ onEnrollClick })
               </p>
 
               <InstallmentPrice
-                monthly={'17\u00A0259\u00A0₽'}
-                monthlyWas={'19\u00A0372\u00A0₽'}
-                total={'172\u00A0590\u00A0₽'}
-                totalWas={'193\u00A0723\u00A0₽'}
+                monthly={'16\u00A0490\u00A0₽'}
+                monthlyWas={'18\u00A0990\u00A0₽'}
+                total={'164\u00A0900\u00A0₽'}
+                totalWas={'189\u00A0900\u00A0₽'}
               />
 
               {/* Features */}
@@ -145,10 +145,10 @@ export const FormatsSection: React.FC<FormatsSectionProps> = ({ onEnrollClick })
               </p>
 
               <InstallmentPrice
-                monthly={'8\u00A0769\u00A0₽'}
-                monthlyWas={'11\u00A0284\u00A0₽'}
-                total={'87\u00A0690\u00A0₽'}
-                totalWas={'112\u00A0846\u00A0₽'}
+                monthly={'8\u00A0490\u00A0₽'}
+                monthlyWas={'10\u00A0490\u00A0₽'}
+                total={'84\u00A0900\u00A0₽'}
+                totalWas={'104\u00A0900\u00A0₽'}
               />
 
               {/* Features */}

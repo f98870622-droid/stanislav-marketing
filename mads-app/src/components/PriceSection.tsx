@@ -44,12 +44,13 @@ export const PriceSection: React.FC<PriceSectionProps> = ({ onEnrollClick }) => 
 
               <div className="mb-6 p-5 rounded-2xl bg-[#1C1C20] border border-white/5">
                 <p className="font-unbounded text-[1.75rem] sm:text-3xl font-black text-white leading-none tracking-tight whitespace-nowrap">
-                  {'8\u00A0769\u00A0₽'}
+                  {'8\u00A0490\u00A0₽'}
                   <span className="ml-2 text-lg font-semibold text-[#C4C4CC]">/мес</span>
                 </p>
+                <p className="text-sm text-[#8A8A93] line-through mt-2">10 490 ₽ / мес</p>
                 <p className="text-sm text-[#A1A1AA] mt-3 leading-snug">
-                  10 платежей · полностью 87&nbsp;690&nbsp;₽{' '}
-                  <span className="line-through text-[#8A8A93]">112&nbsp;846&nbsp;₽</span>
+                  10 платежей · полностью 84&nbsp;900&nbsp;₽{' '}
+                  <span className="line-through text-[#8A8A93]">104&nbsp;900&nbsp;₽</span>
                 </p>
               </div>
             </div>
@@ -58,7 +59,7 @@ export const PriceSection: React.FC<PriceSectionProps> = ({ onEnrollClick }) => 
               onClick={() => onEnrollClick('Самостоятельное обучение')}
               className="btn-magnetic w-full py-4 rounded-full bg-white/10 text-white font-unbounded text-xs font-bold uppercase tracking-wider hover:bg-white/20 transition-colors"
             >
-              Записаться за 8 769 ₽/мес
+              Записаться за 8 490 ₽/мес
             </button>
           </div>
 
@@ -79,12 +80,13 @@ export const PriceSection: React.FC<PriceSectionProps> = ({ onEnrollClick }) => 
 
               <div className="mb-6 p-5 rounded-2xl bg-[#222226] border border-white/5">
                 <p className="font-unbounded text-[1.75rem] sm:text-3xl font-black text-white leading-none tracking-tight whitespace-nowrap">
-                  {'17\u00A0259\u00A0₽'}
+                  {'16\u00A0490\u00A0₽'}
                   <span className="ml-2 text-lg font-semibold text-[#C4C4CC]">/мес</span>
                 </p>
+                <p className="text-sm text-[#8A8A93] line-through mt-2">18 990 ₽ / мес</p>
                 <p className="text-sm text-[#A1A1AA] mt-3 leading-snug">
-                  10 платежей · полностью 172&nbsp;590&nbsp;₽{' '}
-                  <span className="line-through text-[#8A8A93]">193&nbsp;723&nbsp;₽</span>
+                  10 платежей · полностью 164&nbsp;900&nbsp;₽{' '}
+                  <span className="line-through text-[#8A8A93]">189&nbsp;900&nbsp;₽</span>
                 </p>
               </div>
             </div>
@@ -93,7 +95,7 @@ export const PriceSection: React.FC<PriceSectionProps> = ({ onEnrollClick }) => 
               onClick={() => onEnrollClick('Полноценный онлайн-курс')}
               className="btn-magnetic w-full py-4 rounded-full bg-[#D8F83A] text-black font-unbounded text-xs font-bold uppercase tracking-wider hover:bg-[#c9e830] transition-colors"
             >
-              Забронировать место за 17 259 ₽/мес
+              Забронировать место за 16 490 ₽/мес
             </button>
           </div>
         </div>

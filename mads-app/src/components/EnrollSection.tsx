@@ -5,13 +5,15 @@ const TARIFFS = [
   {
     id: 'Полноценный онлайн-курс',
     title: 'Полноценный онлайн-курс',
-    price: '17 259 ₽ / мес',
+    price: '16 490 ₽ / мес',
+    priceWas: '18 990 ₽',
     note: 'Живой поток · 10 платежей',
   },
   {
     id: 'Самостоятельное обучение',
     title: 'Самостоятельное обучение',
-    price: '8 769 ₽ / мес',
+    price: '8 490 ₽ / мес',
+    priceWas: '10 490 ₽',
     note: 'В записи · 10 платежей',
   },
 ] as const;
@@ -291,8 +293,13 @@ export const EnrollSection: React.FC<EnrollSectionProps> = ({ selectedTariff = '
                               </span>
                               <span className="block text-sm text-[#52525B] mt-0.5">{tariff.note}</span>
                             </span>
-                            <span className="sm:shrink-0 text-[15px] sm:text-base font-semibold text-[#121214] whitespace-nowrap">
-                              {tariff.price}
+                            <span className="sm:shrink-0 sm:text-right">
+                              <span className="block text-[15px] sm:text-base font-semibold text-[#121214] whitespace-nowrap">
+                                {tariff.price}
+                              </span>
+                              <span className="block text-sm text-[#A1A1AA] line-through whitespace-nowrap mt-0.5">
+                                {tariff.priceWas}
+                              </span>
                             </span>
                           </label>
                         );
