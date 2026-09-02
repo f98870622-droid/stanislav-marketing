@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Play, ArrowDown, Sparkles } from 'lucide-react';
+import { Play, ArrowDown, Sparkles, X } from 'lucide-react';
 import { SPEAKERS_DATA } from '../data';
 import { PersonPhoto } from './PersonPhoto';
 
@@ -27,6 +27,15 @@ export const Hero: React.FC<HeroProps> = ({ onEnrollClick }) => {
     window.addEventListener('mousemove', handleMouseMove);
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
+
+  useEffect(() => {
+    if (!isVideoModalOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setIsVideoModalOpen(false);
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [isVideoModalOpen]);
 
   return (
     <section
@@ -240,15 +249,26 @@ export const Hero: React.FC<HeroProps> = ({ onEnrollClick }) => {
 
       {/* Video Modal */}
       {isVideoModalOpen && (
-        <div className="fixed inset-0 z-[120] bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
-          <div className="bg-[#121214] border border-white/10 rounded-2xl max-w-3xl w-full p-6 relative">
+        <div
+          className="fixed inset-0 z-[120] bg-black/80 backdrop-blur-md flex items-center justify-center p-4"
+          onClick={() => setIsVideoModalOpen(false)}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Тизер курса"
+        >
+          <div
+            className="bg-[#121214] border border-white/10 rounded-2xl max-w-3xl w-full p-5 sm:p-6 relative"
+            onClick={(e) => e.stopPropagation()}
+          >
             <button
+              type="button"
               onClick={() => setIsVideoModalOpen(false)}
-              className="absolute top-4 right-4 text-white/70 hover:text-white text-xs font-mono tracking-widest uppercase p-2"
+              className="absolute top-3 right-3 sm:top-4 sm:right-4 min-h-11 min-w-11 inline-flex items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20"
+              aria-label="Закрыть"
             >
-              ЗАКРЫТЬ [ESC]
+              <X className="w-5 h-5" />
             </button>
-            <div className="aspect-video bg-black rounded-xl overflow-hidden relative mt-4 border border-white/5">
+            <div className="aspect-video bg-black rounded-xl overflow-hidden relative mt-8 sm:mt-6 border border-white/5">
               <img src="./photos/teaser.jpg" alt="" className="absolute inset-0 w-full h-full object-cover opacity-70" />
               <div className="relative text-center p-8 h-full flex flex-col items-center justify-center">
                 <div className="w-16 h-16 rounded-full bg-white/15 mx-auto flex items-center justify-center mb-4 text-[#D8F83A]">
