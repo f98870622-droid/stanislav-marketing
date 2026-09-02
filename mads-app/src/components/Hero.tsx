@@ -257,18 +257,20 @@ export const Hero: React.FC<HeroProps> = ({ onEnrollClick }) => {
           aria-label="Тизер курса"
         >
           <div
-            className="bg-[#121214] border border-white/10 rounded-2xl max-w-3xl w-full p-5 sm:p-6 relative"
+            className="bg-[#121214] border border-white/10 rounded-2xl max-w-3xl w-full p-5 sm:p-6"
             onClick={(e) => e.stopPropagation()}
           >
-            <button
-              type="button"
-              onClick={() => setIsVideoModalOpen(false)}
-              className="absolute top-3 right-3 sm:top-4 sm:right-4 min-h-11 min-w-11 inline-flex items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20"
-              aria-label="Закрыть"
-            >
-              <X className="w-5 h-5" />
-            </button>
-            <div className="aspect-video bg-black rounded-xl overflow-hidden relative mt-8 sm:mt-6 border border-white/5">
+            <div className="flex justify-end mb-3">
+              <button
+                type="button"
+                onClick={() => setIsVideoModalOpen(false)}
+                className="min-h-11 min-w-11 inline-flex items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20"
+                aria-label="Закрыть"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+            <div className="aspect-video bg-black rounded-xl overflow-hidden relative border border-white/5">
               <img src="./photos/teaser.jpg" alt="" className="absolute inset-0 w-full h-full object-cover opacity-70" />
               <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 p-4 sm:p-8 text-center">
                 <svg
@@ -280,7 +282,14 @@ export const Hero: React.FC<HeroProps> = ({ onEnrollClick }) => {
                   aria-hidden="true"
                 >
                   <circle cx="32" cy="32" r="32" fill="rgba(255,255,255,0.22)" />
-                  <polygon points="26,20 26,44 48,32" fill="#D8F83A" />
+                  <path
+                    d="M26 21.5v21L47 32Z"
+                    fill="#D8F83A"
+                    stroke="#D8F83A"
+                    strokeWidth={5}
+                    strokeLinejoin="round"
+                    strokeLinecap="round"
+                  />
                 </svg>
                 <h4 className="font-unbounded text-base sm:text-lg text-white font-bold">
                   Видео в макете нет
