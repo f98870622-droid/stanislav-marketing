@@ -257,17 +257,17 @@ export const Hero: React.FC<HeroProps> = ({ onEnrollClick }) => {
           aria-label="Тизер курса"
         >
           <div
-            className="bg-[#121214] border border-white/10 rounded-2xl max-w-3xl w-full p-5 sm:p-6"
+            className="bg-[#121214] border border-white/10 rounded-2xl max-w-3xl w-full px-4 pt-2.5 pb-4 sm:px-5 sm:pt-3 sm:pb-5"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="flex justify-end mb-3">
+            <div className="flex justify-end mb-1.5">
               <button
                 type="button"
                 onClick={() => setIsVideoModalOpen(false)}
-                className="min-h-11 min-w-11 inline-flex items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20"
+                className="h-9 w-9 inline-flex items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20"
                 aria-label="Закрыть"
               >
-                <X className="w-5 h-5" />
+                <X className="w-4 h-4" />
               </button>
             </div>
             <div className="aspect-video bg-black rounded-xl overflow-hidden relative border border-white/5">
@@ -283,10 +283,10 @@ export const Hero: React.FC<HeroProps> = ({ onEnrollClick }) => {
                 >
                   <circle cx="32" cy="32" r="32" fill="rgba(255,255,255,0.22)" />
                   <path
-                    d="M26 21.5v21L47 32Z"
+                    d="M27 23.5v17L45 32Z"
                     fill="#D8F83A"
                     stroke="#D8F83A"
-                    strokeWidth={5}
+                    strokeWidth={10}
                     strokeLinejoin="round"
                     strokeLinecap="round"
                   />
