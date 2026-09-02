@@ -264,10 +264,10 @@ export const Hero: React.FC<HeroProps> = ({ onEnrollClick }) => {
               <button
                 type="button"
                 onClick={() => setIsVideoModalOpen(false)}
-                className="h-9 w-9 inline-flex items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20"
+                className="h-11 w-11 inline-flex items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20"
                 aria-label="Закрыть"
               >
-                <X className="w-4 h-4" />
+                <X className="w-5 h-5" />
               </button>
             </div>
             <div className="aspect-video bg-black rounded-xl overflow-hidden relative border border-white/5">
